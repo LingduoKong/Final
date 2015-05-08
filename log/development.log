@@ -3382,3 +3382,17 @@ Processing by WebsitesController#index as HTML
   [1m[36mWebsite Load (0.3ms)[0m  [1mSELECT "websites".* FROM "websites"[0m
   Rendered websites/index.html.erb within layouts/application (1.8ms)
 Completed 200 OK in 27ms (Views: 26.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-05-07 18:46:36 -0500
+Processing by WebsitesController#index as HTML
+  [1m[36mWebsite Load (5.0ms)[0m  [1mSELECT "websites".* FROM "websites"[0m
+  Rendered websites/index.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 516ms (Views: 451.4ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/" for ::1 at 2015-05-07 18:47:16 -0500
+Processing by WebsitesController#index as HTML
+  [1m[36mWebsite Load (3.0ms)[0m  [1mSELECT "websites".* FROM "websites"[0m
+  Rendered websites/index.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 291ms (Views: 234.2ms | ActiveRecord: 4.0ms)
