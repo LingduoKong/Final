@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="col-xs-1">
+    left mav
+  </div>
+  <div class="col-xs-9">
+    <div class="jumbotron">
+      <%= form_tag tweets_path, method:"post" do %>
+        <label for="post_tweet">What news do you want to share with others?</label>
+        <br>
+        <textarea name="post_tweet" class="post-tweet" rows="5"></textarea>
+        <button class="btn btn-success">POST</button>
+      <% end %>
+    </div>
+    <!----------list tweets ---------------------- -->
+    <% @tweets.each do |tweet| %>
+    <div class="jumbotron">
+      <div class="row">
+        <div class="col-xs-1">
+          <%= image_tag(User.find_by(id: tweet.user_id).image, class: "protrait")%>
+        </div>
+        <div class="col-xs-11">
+          <h4><%= User.find_by(id: tweet.user_id).username %></h4>
+          <br>
+          <%= tweet.content %>
+          <br>
+          <% if tweet.image.present? %>
+            <%= image_tag tweet.image, class: "tweet-image" %>
+          <% end %>
+          <br><br>
+          <small><%= Time.at(tweet.date) %></small>
+        </div>
+      </div>
+      <hr>
+      <div class="col-xs-3">
+        <a href="#" class="btn btn-link" role="button">Like</a>
+      </div>
+      <div class="col-xs-3">
+        <a href="#" class="btn btn-link" role="button">Comment</a>
+      </div>
+      <div class="col-xs-3">
+        <%= form_tag edit_tweet_path(tweet.id), method:"get" do %>
+        <button class="btn btn-link">Edit</button>
+        <% end %>
+      </div>
+      <div class="col-xs-3">
+        <%= form_tag tweet_path(tweet.id), method:"delete" do %>
+        <button class="btn btn-link">Delete</button>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <div class="col-xs-2">
+    right nav
+  </div>
+</div>

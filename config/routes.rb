@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  root 'websites#index'
+  root 'tweets#index'
 
-  resources :websites
+  resources :tweets
 
 end
