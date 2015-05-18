@@ -12,16 +12,19 @@ User.delete_all
 User.create  id: 1,
              username: 'yanzhewu',
              password: 'yanzhewu',
+             email: 'yanzhewu@uchicago.edu',
              image: 'http://tp3.sinaimg.cn/1442054902/50/40002770510/1'
 
 User.create  id: 2,
              username: 'haozhou',
              password: 'haozhou',
+             email: 'haozhou@uchicago.edu',
              image: 'http://tp4.sinaimg.cn/1438513755/180/40008758792/1'
              
 User.create  id: 3,
              username: 'lingduokong',
              password: 'lingduokong',
+             email: 'lingduokong@uchicago.edu',
              image: 'http://tp2.sinaimg.cn/1666978981/50/5723425429/0'
 
 
