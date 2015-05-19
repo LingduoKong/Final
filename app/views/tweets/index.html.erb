@@ -35,16 +35,18 @@
         <a href="#" >Like</a>
       </div>
       <div class="col-xs-3">
-        <a href="#" >Comment</a>
+      <a class="comment" id="<%= tweet.id %>">Comment</a>
       </div>
       <% if tweet.user_id == cookies["user_id"].to_i %>
       <div class="col-xs-3">
-        <%= link_to 'Edit', edit_tweet_path(tweet.id), method: :get %>
+        <%= link_to 'Edit', edit_tweet_path(tweet.id) %>
       </div>
       <div class="col-xs-3">
         <%= link_to 'Delete', tweet_path(tweet.id), method: :delete %>
       </div>
       <% end %>
+      <br>
+      <div id="comment-list-<%= tweet.id%>"></div>
     </div>
     <% end %>
   </div>
@@ -62,3 +64,17 @@
     <% end %>
   </div>
 </div>
+
+
+
+<script>
+  $(function(){
+    $('.comment').click(function(){
+      // alert($(this).attr('id') + " comment is clicked");
+      if($("#comment-list-"+$(this).attr('id')).html() == ""){
+        $("#comment-list-"+$(this).attr('id')).html("comment");
+      }
+      else $("#comment-list-"+$(this).attr('id')).html("");
+    });
+  });
+</script>

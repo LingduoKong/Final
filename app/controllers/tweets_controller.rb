@@ -30,5 +30,4 @@ class TweetsController < ApplicationController
 		tweet.save
 		redirect_to root_path
 	end
-
 end

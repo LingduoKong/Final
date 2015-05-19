@@ -57,6 +57,33 @@ Tweet.create  id: 5,
               user_id: "2"                           
 
 
+Comment.delete_all
+
+Comment.create  id: 1,
+                content: 'You cant like your own post...',
+                date: 1431983183,
+                tweet_id: 1,
+                user_id: 1
+
+Comment.create  id: 2,
+                content: 'I must have been a little drunk',
+                date: 1431983197,
+                tweet_id: 1,
+                user_id: 2
+
+
+Comment.create  id: 3,
+                content: 'That was at hydrate',
+                date: 1431983352,
+                tweet_id: 1,
+                user_id: 3
+
+
+Comment.create  id: 4,
+                content: 'I heard you bumped into Alex in Chicago lol, the world is too small!',
+                date: 1431983363,
+                tweet_id: 1,
+                user_id: 3
 
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
