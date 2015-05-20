@@ -1,4 +1,12 @@
 class TweetsController < ApplicationController
+
+	before_action :find_user
+
+  def find_user
+    if (!cookies["user_id"].present?)
+    	redirect_to login_path
+    end
+  end
 	
 	def index
 		@tweets = Tweet.all.order('date desc')

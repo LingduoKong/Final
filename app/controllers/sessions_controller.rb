@@ -9,6 +9,8 @@ class SessionsController < ApplicationController
     if user
       if user.password == params[:password]
         cookies["user_id"] = user.id
+        cookies["username"] = user.username
+        cookies["user_image"] = user.image
         redirect_to root_url, notice: "Welcome back!"
       else
         redirect_to root_url, notice: "Password error."
