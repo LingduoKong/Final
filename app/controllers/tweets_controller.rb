@@ -16,7 +16,7 @@ class TweetsController < ApplicationController
 		tweet = Tweet.new
 		tweet.content = params[:post_tweet]
 		tweet.date = DateTime.now.to_i
-		tweet.user_id = 3
+		tweet.user_id = cookies["user_id"]
 		tweet.save
 		redirect_to root_path
 	end
