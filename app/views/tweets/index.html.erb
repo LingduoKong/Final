@@ -54,7 +54,7 @@
       <br>
 
       <!-- hidden part for comments -->
-      <div class="comment-list" style="display:none;margin-top:20px">
+      <div class="comment-list-<%= tweet.id %>" style="display:none;margin-top:20px">
         <%= form_tag tweet_comments_path(tweet.id), method:"post" do %>
         <label for="comment">
           <%= image_tag(cookies["user_image"], class: "protrait")%>
@@ -117,7 +117,7 @@
 <script>
   $(function(){
     $('.comment').click(function(){
-      $(".comment-list").toggle();
+      $(".comment-list-"+$(this).attr("id")).toggle();
     });
   });
 </script>
