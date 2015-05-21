@@ -46,7 +46,7 @@
         <a class="comment" id="<%= tweet.id %>">Comment</a>
       </div>
       <div class="col-xs-3">
-        Favourite
+        <%= link_to 'View it', tweet_path(tweet.id)%>
       </div>
       <div class="col-xs-3">
         Share
@@ -67,7 +67,7 @@
         <% comments = Comment.where(tweet_id: tweet.id).order('date desc') %>
         <% if ! comments.nil? %>
         <% comments.each do |comment| %>
-        <hr>
+        <hr class="dividing_line">
         <div class="row">
           <div class="col-xs-1">
             <%= image_tag(User.find_by(id: comment.user_id).image, class: "protrait")%>
@@ -76,7 +76,7 @@
             <h4>
               <%= User.find_by(id: comment.user_id).username %>
               <div class="pull-right">
-                <small><%= Time.at(tweet.date) %></small>
+                <small><%= Time.at(comment.date) %></small>
               </div>
             </h4>
             <br>

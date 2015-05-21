@@ -12,6 +12,10 @@ class TweetsController < ApplicationController
 		@tweets = Tweet.all.order('date desc')
 	end
 
+	def show
+		@tweet = Tweet.find_by(id: params["id"])
+	end
+
 	def create
 		tweet = Tweet.new
 		tweet.content = params[:post_tweet]

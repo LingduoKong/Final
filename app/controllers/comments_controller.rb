@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
 		comment.date = DateTime.now.to_i
 		comment.user_id = cookies["user_id"]
 		comment.save
-		redirect_to root_path
+		redirect_to tweet_path(params[:tweet_id])
 	end
 		
 	def destroy
