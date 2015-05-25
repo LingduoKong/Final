@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 
+	has_secure_password
+
 	has_many :tweet, class_name: 'Tweet', foreign_key: 'user_id'
 
 	has_many :comment, class_name: 'Comment', foreign_key: 'user_id'
@@ -10,9 +12,8 @@ class User < ActiveRecord::Base
 
 	has_many :stars, class_name: 'User', :through => :follows
 
-	validates_presence_of :username
-	validates :username, :uniqueness => true
-  validates_presence_of :email
-  validates :email, :uniqueness => true
-  validates_presence_of :password
+	validates :email, :uniqueness => true, :allow_nil => false
+	validates :username, :uniqueness => true, :allow_nil => false
+  validates :password, :presence => true
+
 end

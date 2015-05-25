@@ -15,7 +15,7 @@
   				<br><br>
   				<small><%= Time.at(@tweet.date) %></small>
   			</div>
-  			<% if @tweet.user_id == cookies["user_id"].to_i %>
+  			<% if @tweet.user_id == session["user_id"].to_i %>
   			<div class="col-xs-1">
   				<%= link_to 'Edit', edit_tweet_path(@tweet.id) %>
   			</div>
@@ -37,8 +37,8 @@
   		<div style="margin-top:20px">
   			<%= form_tag tweet_comments_path(@tweet.id), method:"post" do %>
   			<label for="comment">
-  				<%= image_tag(cookies["user_image"], class: "protrait")%>
-  				<%= cookies["username"] %>
+  				<%= image_tag(session["user_image"], class: "protrait")%>
+  				<%= session["username"] %>
   			</label>
   			<br><br>
   			<input name="comment" style="width:80%">
@@ -63,7 +63,7 @@
   					<%= comment.content %>
   				</div>
   				<div class="col-xs-1">
-  					<% if comment.user_id == cookies["user_id"].to_i %>
+  					<% if comment.user_id == session["user_id"].to_i %>
   					<%= link_to 'Delete', tweet_comment_path(@tweet.id ,comment.id), method: :delete%>
   					<% end %>
   				</div>
@@ -75,10 +75,10 @@
   </div>
 
   <div class="col-xs-3">
-  	<% if cookies["user_id"].present? %>
+  	<% if session["user_id"].present? %>
   	<div class="jumbotron">
-  		<%= image_tag(cookies["user_image"], class: "protrait")%>
-  		<%= cookies["username"]%>
+  		<%= image_tag(session["user_image"], class: "protrait")%>
+  		<%= session["username"]%>
   		<hr>
   		<li>following</li>
   		<li>follower</li>

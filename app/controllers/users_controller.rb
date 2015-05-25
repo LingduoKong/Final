@@ -1,5 +1,14 @@
 class UsersController < ApplicationController
 
+	before_action :authorize, only: [:show]
+
+	def authorize
+		@user = User.find_by(id: params[:id])
+		if @user.blank? || session[:user_id] != @user.id
+			redirect_to root_url, notice: "Nice try!"
+		end
+	end
+
 	def new
 		@user = User.new
 	end
@@ -7,14 +16,14 @@ class UsersController < ApplicationController
 	def create
 		@user = User.new(username: params[:username], email: params[:email], password: params[:password])
 		if @user.save
-      redirect_to root_url, notice: "Thanks for signing up."
-    else
-      render "new"
-    end
+			redirect_to root_url, notice: "Thanks for signing up."
+		else
+			render "new"
+		end
 	end
 
 	def show
-		@user = User.find_by(id: params[:id])
+		
 	end
 
 	def edit

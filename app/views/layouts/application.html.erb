@@ -37,8 +37,8 @@
         </ul>
 
         <ul class="nav navbar-nav pull-right">
-          <% if cookies["user_id"].present? %>
-          <li><%= link_to User.find_by(id: cookies["user_id"]).username, user_path(cookies["user_id"]) %></li>
+          <% if session["user_id"].present? %>
+          <li><%= link_to User.find_by(id: session["user_id"]).username, user_path(session["user_id"]) %></li>
           <li><%= link_to "Sign Out", logout_path %></li>
           <% else %>
           <li><%= link_to "Sign Up", '/signup' %></li>
