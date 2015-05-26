@@ -48,8 +48,4 @@ class TweetsController < ApplicationController
 		redirect_to root_path
 	end
 
-	def personal_tweets
-		@tweets = Tweet.where(user_id: params["user_id"])
-		render "personal_tweets"
-	end
 end

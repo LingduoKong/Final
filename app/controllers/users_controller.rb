@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-	before_action :authorize, only: [:show]
+	before_action :authorize, only: [:show , :update]
 
 	def authorize
 		@user = User.find_by(id: params[:id])
@@ -31,7 +31,6 @@ class UsersController < ApplicationController
 	end
 
 	def update
-
 		@user = User.find_by(id: params[:id])
 		@user.username = params[:username]
 		@user.email = params[:email]

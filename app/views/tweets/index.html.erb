@@ -1,7 +1,9 @@
 <div class="row">
   <div class="col-xs-1">
-    left mav
+
   </div>
+
+  <!-- middle part -->
   <div class="col-xs-8">
     <div class="jumbotron">
       <%= form_tag tweets_path, method:"post" do %>
@@ -19,7 +21,9 @@
           <%= image_tag(User.find_by(id: tweet.user_id).image, class: "protrait")%>
         </div>
         <div class="col-xs-8">
-          <h4><%= User.find_by(id: tweet.user_id).username %></h4>
+          <h4>          
+            <%= link_to User.find_by(id: tweet.user_id).username, tweets_path(:user_id => tweet.user_id) %>
+          </h4>
           <br>
           <%= tweet.content %>
           <br>
@@ -117,7 +121,6 @@
     </div>
   </div>
 </div>
-</div>
 
 
 
@@ -126,5 +129,16 @@
     $('.comment').click(function(){
       $(".comment-list-"+$(this).attr("id")).toggle();
     });
+
+    $('.tweet-image').click(function () {
+      if($(this).outerWidth() < $(this).parent().outerWidth()){
+          $(this).css("width", $(this).parent().outerWidth());
+      }
+      else {
+          $(this).css("width", $(this).parent().outerWidth()*0.3);
+      }
+    });
+
   });
 </script>
+
