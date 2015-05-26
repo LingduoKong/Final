@@ -98,16 +98,23 @@
 
   <!-- right nav bar -->
   <div class="col-xs-3">
-    <% if session["user_id"].present? %>
     <div class="jumbotron">
       <%= image_tag(session["user_image"], class: "protrait")%>
       <%= session["username"]%>
       <hr>
-      <li>following</li>
-      <li>follower</li>
-      <li>tweets</li>
+      <div class="row">
+        <div class="col-xs-6">
+          following
+          follower
+          <%= link_to "tweets", tweets_path(:user_id => session["user_id"]) %>
+        </div>
+        <div class="col-xs-2">
+          <%= Follow.where(fan_id: session["user_id"]).count%><br>
+          <%= Follow.where(fan_id: session["user_id"]).count%><br>
+          <%= Tweet.where(user_id: session["user_id"]).count%><br>
+        </div>
+      </div>
     </div>
-    <% end %>
   </div>
 </div>
 </div>

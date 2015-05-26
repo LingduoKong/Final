@@ -85,6 +85,28 @@ Comment.create  id: 4,
                 tweet_id: 1,
                 user_id: 3
 
+
+Follow.delete_all
+
+Follow.create   fan_id: 1,
+                star_id: 2  
+
+Follow.create   fan_id: 1,
+                star_id: 3    
+
+Follow.create   fan_id: 2,
+                star_id: 1    
+
+Follow.create   fan_id: 2,
+                star_id: 3   
+
+Follow.create   fan_id: 3,
+                star_id: 2    
+
+Follow.create   fan_id: 3,
+                star_id: 1    
+                                                                                                                
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #

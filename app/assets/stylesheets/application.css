@@ -41,3 +41,24 @@
  	margin: 1em 0; 
  	padding: 0; 
  }
+
+ .week{
+ 	color: white;
+ 	background: red;
+ 	border-radius: 3px;
+ 	padding: 3px 10px;
+ }
+
+ .medium{
+ 	color: white;
+ 	background: orange;
+ 	border-radius: 3px;
+ 	padding: 0px 10px;
+ }
+
+.strong{
+	color: white;
+ 	background: green;
+ 	border-radius: 3px;
+ 	padding: 0px 10px;
+}

@@ -2,14 +2,19 @@ class TweetsController < ApplicationController
 
 	before_action :find_user
 
-  def find_user
-    if (!session["user_id"].present?)
-    	redirect_to login_path
-    end
-  end
+	def find_user
+		if (!session["user_id"].present?)
+			redirect_to login_path
+		end
+	end
 	
 	def index
-		@tweets = Tweet.all.order('date desc')
+		if params["user_id"].present?
+			@tweets = Tweet.where(user_id: params["user_id"])
+		else
+			@tweets = Tweet.all
+		end
+		@tweets.order('date desc')
 	end
 
 	def show
@@ -41,5 +46,10 @@ class TweetsController < ApplicationController
 		tweet.date = DateTime.now.to_i
 		tweet.save
 		redirect_to root_path
+	end
+
+	def personal_tweets
+		@tweets = Tweet.where(user_id: params["user_id"])
+		render "personal_tweets"
 	end
 end
