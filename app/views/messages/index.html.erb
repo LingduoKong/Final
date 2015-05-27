@@ -1,1 +1,1 @@
-messages of <%= @user.username %>
+messages of <%= User.find_by_id(@connection.user_one_id).username %> and <%= User.find_by_id(@connection.user_two_id).username %>

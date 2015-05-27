@@ -8,9 +8,12 @@ Rails.application.routes.draw do
   
   resources :users do
   	resources :follows
-    resources :messages
   end
 
+  resources :connections do
+    resources :messages
+  end
+  
   get "/signup" => 'users#new'
   get "/login" => 'sessions#new'
   post '/sessions' => 'sessions#create'

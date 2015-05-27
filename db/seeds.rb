@@ -182,6 +182,7 @@ Message.create  id:1,
                 date: 1432931316,
                 sender_id: 3,
                 receiver_id: 2,
+                connection_id: 1,
                 is_read: false
 
 Message.create  id:2,
@@ -189,6 +190,7 @@ Message.create  id:2,
                 date: 1432931383,
                 sender_id: 2,
                 receiver_id: 3,
+                connection_id: 1,                
                 is_read: false
 
 Message.create  id:3,
@@ -196,6 +198,7 @@ Message.create  id:3,
                 date: 1432931454,
                 sender_id: 3,
                 receiver_id: 2,
+                connection_id: 1,                
                 is_read: false     
 
 Message.create  id:4,
@@ -203,8 +206,56 @@ Message.create  id:4,
                 date: 1432931529,
                 sender_id: 2,
                 receiver_id: 3,
-                is_read: false                             
+                connection_id: 1,                
+                is_read: false   
 
+Message.create  id:5,
+                content: "Hahahaha. That's funny. Yeah. I might have to buy a new one tmr",
+                date: 1432931316,
+                sender_id: 3,
+                receiver_id: 1,
+                connection_id: 2,
+                is_read: false
+
+Message.create  id:6,
+                content: "Oh hey. All of my friends are friends with you now.",
+                date: 1432931383,
+                sender_id: 1,
+                receiver_id: 3,
+                connection_id: 2,                
+                is_read: false
+
+Message.create  id:7,
+                content: "Haha. Yay!",
+                date: 1432931454,
+                sender_id: 3,
+                receiver_id: 1,
+                connection_id: 2,                
+                is_read: false     
+
+Message.create  id:8,
+                content: "My old one got wet and fried a few months ago",
+                date: 1432931529,
+                sender_id: 1,
+                receiver_id: 3,
+                connection_id: 2,                
+                is_read: false                                           
+
+
+Connection.delete_all
+
+Connection.create id:1,
+                  user_one_id:3,
+                  user_two_id:2,
+                  date: 1432931529,
+                  last_message: "My old one got wet and fried a few months ago"
+
+Connection.create id:2,
+                  user_one_id:1,
+                  user_two_id:3,
+                  date: 1432931549,
+                  last_message: "My old one got wet and fried a few months ago"    
+                                 
 
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
