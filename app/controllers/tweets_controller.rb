@@ -14,7 +14,7 @@ class TweetsController < ApplicationController
 		else
 			@tweets = Tweet.all
 		end
-		@tweets.order('date desc')
+		@tweets = @tweets.order('date desc').paginate(:per_page => 5, :page => params[:page])
 	end
 
 	def show

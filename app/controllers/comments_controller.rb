@@ -1,5 +1,9 @@
 class CommentsController < ApplicationController
 
+	def index
+		@comments = Comment.where(tweet_id: tweet.id).order('date desc')
+	end
+
 	def create
 		comment = Comment.new
 		comment.content = params[:comment]
@@ -7,7 +11,12 @@ class CommentsController < ApplicationController
 		comment.date = DateTime.now.to_i
 		comment.user_id = session["user_id"]
 		comment.save
-		redirect_to tweet_path(params[:tweet_id])
+
+		respond_to do |format|
+			format.html { redirect_to tweet_path(params[:tweet_id])}
+			format.js 
+		end
+
 	end
 		
 	def destroy

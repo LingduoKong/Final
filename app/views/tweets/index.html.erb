@@ -59,7 +59,7 @@
 
       <!-- hidden part for comments -->
       <div class="comment-list-<%= tweet.id %>" style="display:none;margin-top:20px">
-        <%= form_tag tweet_comments_path(tweet.id), method:"post" do %>
+      <%= form_tag tweet_comments_path(tweet.id), method: "post", remote: true do %>
         <label for="comment">
           <%= image_tag(session["user_image"], class: "protrait")%>
           <%= session["username"] %>
@@ -122,7 +122,9 @@
   </div>
 </div>
 
-
+<div class="text-center">
+  <%= will_paginate @tweets, :renderer => BootstrapPagination::Rails %>
+</div>
 
 <script>
   $(function(){
@@ -132,10 +134,10 @@
 
     $('.tweet-image').click(function () {
       if($(this).outerWidth() < $(this).parent().outerWidth()){
-          $(this).css("width", $(this).parent().outerWidth());
+        $(this).css("width", $(this).parent().outerWidth());
       }
       else {
-          $(this).css("width", $(this).parent().outerWidth()*0.3);
+        $(this).css("width", $(this).parent().outerWidth()*0.3);
       }
     });
 
