@@ -1,10 +1,18 @@
 class TweetsController < ApplicationController
 
 	before_action :find_user
-
 	def find_user
 		if (!session["user_id"].present?)
 			redirect_to login_path
+		end
+	end
+
+	before_action :authorize, only: [:edit, :destroy, :update]
+	def authorize
+		@tweet = Tweet.find_by(id: params["id"])
+		@user = User.find_by(id: @tweet.user_id)
+		if @user.blank? || session[:user_id] != @user.id
+			redirect_to root_url, notice: "Nice try!"
 		end
 	end
 	
@@ -31,7 +39,7 @@ class TweetsController < ApplicationController
 	end
 
 	def destroy
-		Tweet.find_by(id: params["id"]).delete
+		@tweet.delete
 		redirect_to root_path
 	end
 
@@ -40,11 +48,10 @@ class TweetsController < ApplicationController
 	end
 
 	def update
-		tweet = Tweet.find_by(id: params["id"])
-		tweet.content = params["update_tweet"]
-		tweet.image = params["image"]
-		tweet.date = DateTime.now.to_i
-		tweet.save
+		@tweet.content = params["update_tweet"]
+		@tweet.image = params["image"]
+		@tweet.date = DateTime.now.to_i
+		@tweet.save
 		redirect_to root_path
 	end
 

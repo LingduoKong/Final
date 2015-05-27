@@ -121,6 +121,32 @@ Comment.create  id: 4,
                 tweet_id: 1,
                 user_id: 3
 
+Comment.create  id: 5,
+                content: 'You cant like your own post...',
+                date: 1431983183,
+                tweet_id: 2,
+                user_id: 1
+
+Comment.create  id: 6,
+                content: 'I must have been a little drunk',
+                date: 1431983197,
+                tweet_id: 2,
+                user_id: 2
+
+
+Comment.create  id: 7,
+                content: 'That was at hydrate',
+                date: 1431983352,
+                tweet_id: 3,
+                user_id: 3
+
+
+Comment.create  id: 8,
+                content: 'I heard you bumped into Alex in Chicago lol, the world is too small!',
+                date: 1431983363,
+                tweet_id: 3,
+                user_id: 3
+
 
 Follow.delete_all
 
