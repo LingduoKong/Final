@@ -1,7 +1,36 @@
-<% @users.each do |user| %>
+<div class="col-xs-2">
+	
+</div>
 
-	<%= user.username %>
+<div class="col-xs-8">
+	<div class="jumbotron">
+		<h3>Search Result</h3>
+		<hr>
+		<% @users.each do |user| %>
+		<%= image_tag(user.image, class: "protrait")%>
+		<%= user.username %>
+		<div class="pull-right">
+			<% if Follow.find_by_fan_id_and_star_id(user.id, session["user_id"]).present? && Follow.find_by_star_id_and_fan_id(user.id, session["user_id"]).present?  %>
+			<button class="btn">Follow each other </button>
+			<% follow = Follow.find_by_star_id_and_fan_id(user.id, session["user_id"]) %>
+			<%= link_to user_follow_path(user.id, follow.id),method: "delete", class: "btn btn-danger" %>
+			<!-- 			<a class="btn btn-danger">Unfollow</a> -->
+			<% elsif Follow.find_by_star_id_and_fan_id(user.id, session["user_id"]).present? %>
+			<% follow = Follow.find_by_star_id_and_fan_id(user.id, session["user_id"]) %>
+			<%= link_to user_follow_path(user.id, follow.id),method: "delete", class: "btn btn-danger" %>
+<!-- 			<a class="btn btn-danger">Unfollow</a> -->
+			<% else %>
+			<%= link_to user_follows_path(user.id),method: "post", class: "btn btn-success" %>
+			<a class="btn btn-success">Follow</a>
+			<% end %>
+			<a class="btn btn-default">Connect</a>
+		</div>
+		<br>
+		<% end %>
 
-	<br>
+	</div>
+</div>
 
-<% end %>
+<div class="col-xs-2">
+	
+</div>
