@@ -151,22 +151,28 @@ Comment.create  id: 8,
 Follow.delete_all
 
 Follow.create   fan_id: 1,
-                star_id: 2  
+                star_id: 2,
+                id: 1  
 
 Follow.create   fan_id: 1,
-                star_id: 3    
+                star_id: 3,
+                id: 2   
 
 Follow.create   fan_id: 2,
-                star_id: 1    
+                star_id: 1,
+                id: 3    
 
 Follow.create   fan_id: 2,
-                star_id: 3   
+                star_id: 3,
+                id: 4   
 
 Follow.create   fan_id: 3,
-                star_id: 2    
+                star_id: 2,
+                id: 5    
 
 Follow.create   fan_id: 3,
-                star_id: 1    
+                star_id: 1,
+                id: 6    
                                                                                                                 
 
 # This file should contain all the record creation needed to seed the database with its default values.

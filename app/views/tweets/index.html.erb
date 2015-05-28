@@ -105,7 +105,7 @@
       <div class="row">
         <div class="col-xs-6">
           following
-          follower
+          <%= link_to "follower", user_follows_path(session["user_id"]) %>
           <%= link_to "tweets", tweets_path(:user_id => session["user_id"]) %>
         </div>
         <div class="col-xs-2">
@@ -124,9 +124,6 @@
 
 <script>
   $(function(){
-    $('.comment').click(function(){
-      $(".comment-list-"+$(this).attr("id")).toggle();
-    });
 
     $('.tweet-image').click(function () {
       if($(this).outerWidth() < $(this).parent().outerWidth()){

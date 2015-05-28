@@ -1,0 +1,10 @@
+
+<% @followers_id.each do |follower_id| %>
+
+<div class="col-xs-6">
+	<% user_id = Follow.find_by(:id => follower_id).fan_id %>
+	<%= User.find_by(:id => user_id).username %>
+	<a href="">followed</a>
+</div>
+
+<% end %>
