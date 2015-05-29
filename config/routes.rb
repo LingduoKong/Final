@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   
   resources :users do
   	resources :follows
+    resources :messages
   end
 
   get "/signup" => 'users#new'

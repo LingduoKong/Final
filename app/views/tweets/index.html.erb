@@ -104,7 +104,7 @@
       <hr>
       <div class="row">
         <div class="col-xs-6">
-          following
+          <%= link_to "following", user_follows_path(session["user_id"]) %>
           <%= link_to "follower", user_follows_path(session["user_id"]) %>
           <%= link_to "tweets", tweets_path(:user_id => session["user_id"]) %>
         </div>

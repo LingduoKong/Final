@@ -173,7 +173,38 @@ Follow.create   fan_id: 3,
 Follow.create   fan_id: 3,
                 star_id: 1,
                 id: 6    
+
                                                                                                                 
+Message.delete_all
+
+Message.create  id:1,
+                content: "Hahahaha. That's funny. Yeah. I might have to buy a new one tmr",
+                date: 1432931316,
+                sender_id: 3,
+                receiver_id: 2,
+                is_read: false
+
+Message.create  id:2,
+                content: "Oh hey. All of my friends are friends with you now.",
+                date: 1432931383,
+                sender_id: 2,
+                receiver_id: 3,
+                is_read: false
+
+Message.create  id:3,
+                content: "Haha. Yay!",
+                date: 1432931454,
+                sender_id: 3,
+                receiver_id: 2,
+                is_read: false     
+
+Message.create  id:4,
+                content: "My old one got wet and fried a few months ago",
+                date: 1432931529,
+                sender_id: 2,
+                receiver_id: 3,
+                is_read: false                             
+
 
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).

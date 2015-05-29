@@ -35943,3 +35943,1213 @@ Processing by FollowsController#index as HTML
   Rendered follows/index.html.erb within layouts/application (3.6ms)
   [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
 Completed 200 OK in 38ms (Views: 35.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/3/follows" for ::1 at 2015-05-29 15:20:22 -0500
+Processing by FollowsController#index as HTML
+  Parameters: {"user_id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."star_id" WHERE "follows"."fan_id" = ?  [["fan_id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."fan_id" WHERE "follows"."star_id" = ?[0m  [["star_id", 3]]
+  Rendered follows/index.html.erb within layouts/application (1.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+Completed 200 OK in 27ms (Views: 25.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-05-29 15:24:59 -0500
+Processing by TweetsController#index as HTML
+  [1m[36mTweet Load (0.2ms)[0m  [1mSELECT  "tweets".* FROM "tweets"  ORDER BY date desc LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "tweets"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 10]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "follows" WHERE "follows"."fan_id" = ?  [["fan_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "follows" WHERE "follows"."fan_id" = ?[0m  [["fan_id", 3]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "tweets" WHERE "tweets"."user_id" = ?  [["user_id", 3]]
+  Rendered tweets/index.html.erb within layouts/application (16.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+Completed 200 OK in 40ms (Views: 37.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/3/follows" for ::1 at 2015-05-29 15:25:01 -0500
+Processing by FollowsController#index as HTML
+  Parameters: {"user_id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."star_id" WHERE "follows"."fan_id" = ?[0m  [["fan_id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."fan_id" WHERE "follows"."star_id" = ?  [["star_id", 3]]
+  Rendered follows/index.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+Completed 200 OK in 25ms (Views: 24.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/3/follows" for ::1 at 2015-05-29 15:25:05 -0500
+Processing by FollowsController#index as HTML
+  Parameters: {"user_id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."star_id" WHERE "follows"."fan_id" = ?[0m  [["fan_id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."fan_id" WHERE "follows"."star_id" = ?  [["star_id", 3]]
+  Rendered follows/index.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+Completed 200 OK in 25ms (Views: 23.7ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TEMPORARY TABLE "amessages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar, "date" integer, "sender_id" integer, "receiver_id" integer, "is_read" boolean DEFAULT 'f') 
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_messages_on_receiver_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_messages_on_receiver_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_messages_on_sender_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_messages_on_sender_id' AND type='index'
+
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "tindex_amessages_on_receiver_id" ON "amessages" ("receiver_id")
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "tindex_amessages_on_sender_id" ON "amessages" ("sender_id")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "messages"
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE "messages"[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar, "date" integer, "sender_id" integer, "receiver_id" integer, "is_read" boolean DEFAULT 'f') 
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_amessages_on_sender_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_amessages_on_sender_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_amessages_on_receiver_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_amessages_on_receiver_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_messages_on_sender_id" ON "messages" ("sender_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_messages_on_sender_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_messages_on_sender_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_messages_on_receiver_id" ON "messages" ("receiver_id")[0m
+  [1m[35m (0.0ms)[0m  SELECT * FROM "amessages"
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE "amessages"[0m
+  [1m[35m (9.2ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_tweet_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_tweet_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_follows_on_star_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_follows_on_star_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_follows_on_fan_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_follows_on_fan_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_likes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_likes_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_likes_on_tweet_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_likes_on_tweet_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_messages_on_receiver_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_messages_on_receiver_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_messages_on_sender_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_messages_on_sender_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_tweets_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_tweets_on_user_id' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_tweet_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_tweet_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_follows_on_star_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_follows_on_star_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_follows_on_fan_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_follows_on_fan_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_likes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_likes_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_likes_on_tweet_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_likes_on_tweet_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_messages_on_receiver_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_messages_on_receiver_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_messages_on_sender_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_messages_on_sender_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_tweets_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_tweets_on_user_id' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (9.5ms)[0m  DELETE FROM "users"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'yanzhewu@uchicago.edu' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'yanzhewu' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("id", "username", "password_digest", "email", "image") VALUES (?, ?, ?, ?, ?)  [["id", 1], ["username", "yanzhewu"], ["password_digest", "$2a$10$z6KvEm1pww9WuIO4JYYpk.7gc1/5hvIWFbCvG7mAxu5zy4UY72gE2"], ["email", "yanzhewu@uchicago.edu"], ["image", "http://tp3.sinaimg.cn/1442054902/50/40002770510/1"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'haozhou@uchicago.edu' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'haozhou' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("id", "username", "password_digest", "email", "image") VALUES (?, ?, ?, ?, ?)[0m  [["id", 2], ["username", "haozhou"], ["password_digest", "$2a$10$6fCqq/GAhW60YMly7THc6ez/jD6mDKH..XZsDgh/Bvc51dHeX40Sq"], ["email", "haozhou@uchicago.edu"], ["image", "http://tp4.sinaimg.cn/1438513755/180/40008758792/1"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'lingduokong@uchicago.edu' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'lingduokong' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("id", "username", "password_digest", "email", "image") VALUES (?, ?, ?, ?, ?)  [["id", 3], ["username", "lingduokong"], ["password_digest", "$2a$10$ajPnCLabvF6B6SMjwOEALeuB7iddj3ZsfUJOIc/qMvQolsRhzBxmq"], ["email", "lingduokong@uchicago.edu"], ["image", "http://tp2.sinaimg.cn/1666978981/50/5723425429/0"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mSQL (0.9ms)[0m  DELETE FROM "tweets"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tweets" ("id", "content", "date", "user_id", "image") VALUES (?, ?, ?, ?, ?)  [["id", 1], ["content", "Lous challenge anyone???????"], ["date", 1425069955], ["user_id", 1], ["image", "http://ww1.sinaimg.cn/bmiddle/6973530djw1esi5icwcmuj20ji0yojua.jpg"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tweets" ("id", "content", "date", "user_id", "image") VALUES (?, ?, ?, ?, ?)[0m  [["id", 2], ["content", "An entire team of Apple developers was there 24/7 to help, so that was a wonderful resource to learn Swift and Objective C in a weekend."], ["date", 1425069957], ["user_id", 2], ["image", "http://ww4.sinaimg.cn/square/87246b09jw1esguiqhsjpj20zk0qodot.jpg"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tweets" ("id", "content", "date", "user_id", "image") VALUES (?, ?, ?, ?, ?)  [["id", 3], ["content", "CSIL is once again selling discounted used computers and monitors for university students and staff! Models for sale are MacPro(2010), Shuttle, and 24\" Apple LED Cinema Display. First come, first serve."], ["date", 1425069955], ["user_id", 3], ["image", "http://ww1.sinaimg.cn/thumbnail/6ac4d14dgw1esi2hn6vmdj20dw0dwdhr.jpg"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tweets" ("id", "content", "date", "user_id", "image") VALUES (?, ?, ?, ?, ?)[0m  [["id", 4], ["content", "Went to an alum potluck, being the only student showing up with four alums around, which is pretty cool and actually the best alum event so far!"], ["date", 1425069955], ["user_id", 1], ["image", "http://ww3.sinaimg.cn/bmiddle/4a23d069jw1esi60jgix6j20v815owoq.jpg"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tweets" ("id", "content", "date", "user_id", "image") VALUES (?, ?, ?, ?, ?)  [["id", 5], ["content", "Wish I could graduate again ‪#‎BadgerMemory‬"], ["date", 1425963490], ["user_id", 2], ["image", "http://ww4.sinaimg.cn/square/005wlOCojw1esi2tymbxjj30zk0k042w.jpg"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tweets" ("id", "content", "date", "user_id", "image") VALUES (?, ?, ?, ?, ?)[0m  [["id", 6], ["content", "Lous challenge anyone???????"], ["date", 1425069955], ["user_id", 1], ["image", "http://ww1.sinaimg.cn/bmiddle/6973530djw1esi5icwcmuj20ji0yojua.jpg"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tweets" ("id", "content", "date", "user_id", "image") VALUES (?, ?, ?, ?, ?)  [["id", 7], ["content", "An entire team of Apple developers was there 24/7 to help, so that was a wonderful resource to learn Swift and Objective C in a weekend."], ["date", 1425069957], ["user_id", 2], ["image", "http://ww4.sinaimg.cn/square/87246b09jw1esguiqhsjpj20zk0qodot.jpg"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tweets" ("id", "content", "date", "user_id", "image") VALUES (?, ?, ?, ?, ?)[0m  [["id", 8], ["content", "CSIL is once again selling discounted used computers and monitors for university students and staff! Models for sale are MacPro(2010), Shuttle, and 24\" Apple LED Cinema Display. First come, first serve."], ["date", 1425069955], ["user_id", 3], ["image", "http://ww1.sinaimg.cn/thumbnail/6ac4d14dgw1esi2hn6vmdj20dw0dwdhr.jpg"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tweets" ("id", "content", "date", "user_id", "image") VALUES (?, ?, ?, ?, ?)  [["id", 9], ["content", "Went to an alum potluck, being the only student showing up with four alums around, which is pretty cool and actually the best alum event so far!"], ["date", 1425069955], ["user_id", 1], ["image", "http://ww3.sinaimg.cn/bmiddle/4a23d069jw1esi60jgix6j20v815owoq.jpg"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tweets" ("id", "content", "date", "user_id", "image") VALUES (?, ?, ?, ?, ?)[0m  [["id", 10], ["content", "Wish I could graduate again ‪#‎BadgerMemory‬"], ["date", 1425963490], ["user_id", 2], ["image", "http://ww4.sinaimg.cn/square/005wlOCojw1esi2tymbxjj30zk0k042w.jpg"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36mSQL (0.9ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "comments" ("id", "content", "date", "tweet_id", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["id", 1], ["content", "You cant like your own post..."], ["date", 1431983183], ["tweet_id", 1], ["user_id", 1]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "comments" ("id", "content", "date", "tweet_id", "user_id") VALUES (?, ?, ?, ?, ?)  [["id", 2], ["content", "I must have been a little drunk"], ["date", 1431983197], ["tweet_id", 1], ["user_id", 2]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "comments" ("id", "content", "date", "tweet_id", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["id", 3], ["content", "That was at hydrate"], ["date", 1431983352], ["tweet_id", 1], ["user_id", 3]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "comments" ("id", "content", "date", "tweet_id", "user_id") VALUES (?, ?, ?, ?, ?)  [["id", 4], ["content", "I heard you bumped into Alex in Chicago lol, the world is too small!"], ["date", 1431983363], ["tweet_id", 1], ["user_id", 3]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "comments" ("id", "content", "date", "tweet_id", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["id", 5], ["content", "You cant like your own post..."], ["date", 1431983183], ["tweet_id", 2], ["user_id", 1]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "comments" ("id", "content", "date", "tweet_id", "user_id") VALUES (?, ?, ?, ?, ?)  [["id", 6], ["content", "I must have been a little drunk"], ["date", 1431983197], ["tweet_id", 2], ["user_id", 2]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "comments" ("id", "content", "date", "tweet_id", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["id", 7], ["content", "That was at hydrate"], ["date", 1431983352], ["tweet_id", 3], ["user_id", 3]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "comments" ("id", "content", "date", "tweet_id", "user_id") VALUES (?, ?, ?, ?, ?)  [["id", 8], ["content", "I heard you bumped into Alex in Chicago lol, the world is too small!"], ["date", 1431983363], ["tweet_id", 3], ["user_id", 3]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mSQL (0.8ms)[0m  DELETE FROM "follows"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "follows" ("fan_id", "star_id", "id") VALUES (?, ?, ?)  [["fan_id", 1], ["star_id", 2], ["id", 1]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "follows" ("fan_id", "star_id", "id") VALUES (?, ?, ?)[0m  [["fan_id", 1], ["star_id", 3], ["id", 2]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "follows" ("fan_id", "star_id", "id") VALUES (?, ?, ?)  [["fan_id", 2], ["star_id", 1], ["id", 3]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "follows" ("fan_id", "star_id", "id") VALUES (?, ?, ?)[0m  [["fan_id", 2], ["star_id", 3], ["id", 4]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "follows" ("fan_id", "star_id", "id") VALUES (?, ?, ?)  [["fan_id", 3], ["star_id", 2], ["id", 5]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "follows" ("fan_id", "star_id", "id") VALUES (?, ?, ?)[0m  [["fan_id", 3], ["star_id", 1], ["id", 6]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TEMPORARY TABLE "amessages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar, "date" integer, "sender_id" integer, "receiver_id" integer, "is_read" boolean DEFAULT 'f') 
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_messages_on_receiver_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_messages_on_receiver_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_messages_on_sender_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_messages_on_sender_id' AND type='index'
+
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "tindex_amessages_on_receiver_id" ON "amessages" ("receiver_id")
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "tindex_amessages_on_sender_id" ON "amessages" ("sender_id")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "messages"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "messages"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar, "date" integer, "sender_id" integer, "receiver_id" integer, "is_read" boolean DEFAULT 'f') 
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_amessages_on_sender_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_amessages_on_sender_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_amessages_on_receiver_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_amessages_on_receiver_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_messages_on_sender_id" ON "messages" ("sender_id")[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_messages_on_sender_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_messages_on_sender_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_messages_on_receiver_id" ON "messages" ("receiver_id")[0m
+  [1m[35m (0.0ms)[0m  SELECT * FROM "amessages"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "amessages"[0m
+  [1m[35m (9.2ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_tweet_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_tweet_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_follows_on_star_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_follows_on_star_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_follows_on_fan_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_follows_on_fan_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_likes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_likes_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_likes_on_tweet_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_likes_on_tweet_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_messages_on_receiver_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_messages_on_receiver_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_messages_on_sender_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_messages_on_sender_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_tweets_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_tweets_on_user_id' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_tweet_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_tweet_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_follows_on_star_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_follows_on_star_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_follows_on_fan_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_follows_on_fan_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_likes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_likes_on_user_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_likes_on_tweet_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_likes_on_tweet_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_messages_on_receiver_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_messages_on_receiver_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_messages_on_sender_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_messages_on_sender_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_tweets_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_tweets_on_user_id' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (9.3ms)[0m  DELETE FROM "users"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'yanzhewu@uchicago.edu' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'yanzhewu' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("id", "username", "password_digest", "email", "image") VALUES (?, ?, ?, ?, ?)  [["id", 1], ["username", "yanzhewu"], ["password_digest", "$2a$10$6xmk6rcFkx9ta.CaTZRRQuOX./2oc8.qb2vnceyacPdlbd6CDi4He"], ["email", "yanzhewu@uchicago.edu"], ["image", "http://tp3.sinaimg.cn/1442054902/50/40002770510/1"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'haozhou@uchicago.edu' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'haozhou' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("id", "username", "password_digest", "email", "image") VALUES (?, ?, ?, ?, ?)[0m  [["id", 2], ["username", "haozhou"], ["password_digest", "$2a$10$LBxyt3CgyKHhSB5rF//qC.EztcU6fc3IY7zXFKeehC.mHh72mbVdC"], ["email", "haozhou@uchicago.edu"], ["image", "http://tp4.sinaimg.cn/1438513755/180/40008758792/1"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'lingduokong@uchicago.edu' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'lingduokong' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("id", "username", "password_digest", "email", "image") VALUES (?, ?, ?, ?, ?)  [["id", 3], ["username", "lingduokong"], ["password_digest", "$2a$10$acHIjLn7EhamXx1eoaBQDOOjZ6MjNDi/xeXNlqUK3bl6fvoEjJCqG"], ["email", "lingduokong@uchicago.edu"], ["image", "http://tp2.sinaimg.cn/1666978981/50/5723425429/0"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mSQL (1.0ms)[0m  DELETE FROM "tweets"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "tweets" ("id", "content", "date", "user_id", "image") VALUES (?, ?, ?, ?, ?)  [["id", 1], ["content", "Lous challenge anyone???????"], ["date", 1425069955], ["user_id", 1], ["image", "http://ww1.sinaimg.cn/bmiddle/6973530djw1esi5icwcmuj20ji0yojua.jpg"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tweets" ("id", "content", "date", "user_id", "image") VALUES (?, ?, ?, ?, ?)[0m  [["id", 2], ["content", "An entire team of Apple developers was there 24/7 to help, so that was a wonderful resource to learn Swift and Objective C in a weekend."], ["date", 1425069957], ["user_id", 2], ["image", "http://ww4.sinaimg.cn/square/87246b09jw1esguiqhsjpj20zk0qodot.jpg"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tweets" ("id", "content", "date", "user_id", "image") VALUES (?, ?, ?, ?, ?)  [["id", 3], ["content", "CSIL is once again selling discounted used computers and monitors for university students and staff! Models for sale are MacPro(2010), Shuttle, and 24\" Apple LED Cinema Display. First come, first serve."], ["date", 1425069955], ["user_id", 3], ["image", "http://ww1.sinaimg.cn/thumbnail/6ac4d14dgw1esi2hn6vmdj20dw0dwdhr.jpg"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tweets" ("id", "content", "date", "user_id", "image") VALUES (?, ?, ?, ?, ?)[0m  [["id", 4], ["content", "Went to an alum potluck, being the only student showing up with four alums around, which is pretty cool and actually the best alum event so far!"], ["date", 1425069955], ["user_id", 1], ["image", "http://ww3.sinaimg.cn/bmiddle/4a23d069jw1esi60jgix6j20v815owoq.jpg"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tweets" ("id", "content", "date", "user_id", "image") VALUES (?, ?, ?, ?, ?)  [["id", 5], ["content", "Wish I could graduate again ‪#‎BadgerMemory‬"], ["date", 1425963490], ["user_id", 2], ["image", "http://ww4.sinaimg.cn/square/005wlOCojw1esi2tymbxjj30zk0k042w.jpg"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tweets" ("id", "content", "date", "user_id", "image") VALUES (?, ?, ?, ?, ?)[0m  [["id", 6], ["content", "Lous challenge anyone???????"], ["date", 1425069955], ["user_id", 1], ["image", "http://ww1.sinaimg.cn/bmiddle/6973530djw1esi5icwcmuj20ji0yojua.jpg"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tweets" ("id", "content", "date", "user_id", "image") VALUES (?, ?, ?, ?, ?)  [["id", 7], ["content", "An entire team of Apple developers was there 24/7 to help, so that was a wonderful resource to learn Swift and Objective C in a weekend."], ["date", 1425069957], ["user_id", 2], ["image", "http://ww4.sinaimg.cn/square/87246b09jw1esguiqhsjpj20zk0qodot.jpg"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tweets" ("id", "content", "date", "user_id", "image") VALUES (?, ?, ?, ?, ?)[0m  [["id", 8], ["content", "CSIL is once again selling discounted used computers and monitors for university students and staff! Models for sale are MacPro(2010), Shuttle, and 24\" Apple LED Cinema Display. First come, first serve."], ["date", 1425069955], ["user_id", 3], ["image", "http://ww1.sinaimg.cn/thumbnail/6ac4d14dgw1esi2hn6vmdj20dw0dwdhr.jpg"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tweets" ("id", "content", "date", "user_id", "image") VALUES (?, ?, ?, ?, ?)  [["id", 9], ["content", "Went to an alum potluck, being the only student showing up with four alums around, which is pretty cool and actually the best alum event so far!"], ["date", 1425069955], ["user_id", 1], ["image", "http://ww3.sinaimg.cn/bmiddle/4a23d069jw1esi60jgix6j20v815owoq.jpg"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tweets" ("id", "content", "date", "user_id", "image") VALUES (?, ?, ?, ?, ?)[0m  [["id", 10], ["content", "Wish I could graduate again ‪#‎BadgerMemory‬"], ["date", 1425963490], ["user_id", 2], ["image", "http://ww4.sinaimg.cn/square/005wlOCojw1esi2tymbxjj30zk0k042w.jpg"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36mSQL (0.9ms)[0m  [1mDELETE FROM "comments"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "comments" ("id", "content", "date", "tweet_id", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["id", 1], ["content", "You cant like your own post..."], ["date", 1431983183], ["tweet_id", 1], ["user_id", 1]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "comments" ("id", "content", "date", "tweet_id", "user_id") VALUES (?, ?, ?, ?, ?)  [["id", 2], ["content", "I must have been a little drunk"], ["date", 1431983197], ["tweet_id", 1], ["user_id", 2]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "comments" ("id", "content", "date", "tweet_id", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["id", 3], ["content", "That was at hydrate"], ["date", 1431983352], ["tweet_id", 1], ["user_id", 3]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "comments" ("id", "content", "date", "tweet_id", "user_id") VALUES (?, ?, ?, ?, ?)  [["id", 4], ["content", "I heard you bumped into Alex in Chicago lol, the world is too small!"], ["date", 1431983363], ["tweet_id", 1], ["user_id", 3]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "comments" ("id", "content", "date", "tweet_id", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["id", 5], ["content", "You cant like your own post..."], ["date", 1431983183], ["tweet_id", 2], ["user_id", 1]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "comments" ("id", "content", "date", "tweet_id", "user_id") VALUES (?, ?, ?, ?, ?)  [["id", 6], ["content", "I must have been a little drunk"], ["date", 1431983197], ["tweet_id", 2], ["user_id", 2]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "comments" ("id", "content", "date", "tweet_id", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["id", 7], ["content", "That was at hydrate"], ["date", 1431983352], ["tweet_id", 3], ["user_id", 3]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "comments" ("id", "content", "date", "tweet_id", "user_id") VALUES (?, ?, ?, ?, ?)  [["id", 8], ["content", "I heard you bumped into Alex in Chicago lol, the world is too small!"], ["date", 1431983363], ["tweet_id", 3], ["user_id", 3]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mSQL (0.9ms)[0m  DELETE FROM "follows"
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "follows" ("fan_id", "star_id", "id") VALUES (?, ?, ?)  [["fan_id", 1], ["star_id", 2], ["id", 1]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "follows" ("fan_id", "star_id", "id") VALUES (?, ?, ?)[0m  [["fan_id", 1], ["star_id", 3], ["id", 2]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "follows" ("fan_id", "star_id", "id") VALUES (?, ?, ?)  [["fan_id", 2], ["star_id", 1], ["id", 3]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "follows" ("fan_id", "star_id", "id") VALUES (?, ?, ?)[0m  [["fan_id", 2], ["star_id", 3], ["id", 4]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "follows" ("fan_id", "star_id", "id") VALUES (?, ?, ?)  [["fan_id", 3], ["star_id", 2], ["id", 5]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "follows" ("fan_id", "star_id", "id") VALUES (?, ?, ?)[0m  [["fan_id", 3], ["star_id", 1], ["id", 6]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36mSQL (0.9ms)[0m  [1mDELETE FROM "messages"[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "messages" ("id", "content", "date", "sender_id", "receiver_id") VALUES (?, ?, ?, ?, ?)[0m  [["id", 1], ["content", "Hahahaha. That's funny. Yeah. I might have to buy a new one tmr"], ["date", 1432931316], ["sender_id", 3], ["receiver_id", 2]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "messages" ("id", "content", "date", "sender_id", "receiver_id") VALUES (?, ?, ?, ?, ?)  [["id", 2], ["content", "Oh hey. All of my friends are friends with you now."], ["date", 1432931383], ["sender_id", 2], ["receiver_id", 3]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "messages" ("id", "content", "date", "sender_id", "receiver_id") VALUES (?, ?, ?, ?, ?)[0m  [["id", 3], ["content", "Haha. Yay!"], ["date", 1432931454], ["sender_id", 3], ["receiver_id", 2]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "messages" ("id", "content", "date", "sender_id", "receiver_id") VALUES (?, ?, ?, ?, ?)  [["id", 4], ["content", "My old one got wet and fried a few months ago"], ["date", 1432931529], ["sender_id", 2], ["receiver_id", 3]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+
+
+Started GET "/" for ::1 at 2015-05-29 16:09:36 -0500
+Processing by TweetsController#index as HTML
+  [1m[35mTweet Load (0.4ms)[0m  SELECT  "tweets".* FROM "tweets"  ORDER BY date desc LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tweets"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 10]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "follows" WHERE "follows"."fan_id" = ?[0m  [["fan_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "follows" WHERE "follows"."fan_id" = ?  [["fan_id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered tweets/index.html.erb within layouts/application (32.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+Completed 200 OK in 61ms (Views: 54.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2015-05-29 16:10:53 -0500
+Processing by TweetsController#index as HTML
+  [1m[36mTweet Load (0.4ms)[0m  [1mSELECT  "tweets".* FROM "tweets"  ORDER BY date desc LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "tweets"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 10]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "follows" WHERE "follows"."fan_id" = ?  [["fan_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "follows" WHERE "follows"."fan_id" = ?[0m  [["fan_id", 3]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "tweets" WHERE "tweets"."user_id" = ?  [["user_id", 3]]
+  Rendered tweets/index.html.erb within layouts/application (43.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+Completed 200 OK in 69ms (Views: 63.0ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2015-05-29 16:13:45 -0500
+Processing by TweetsController#index as HTML
+  [1m[35mTweet Load (0.2ms)[0m  SELECT  "tweets".* FROM "tweets"  ORDER BY date desc LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tweets"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.4ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 10]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "follows" WHERE "follows"."fan_id" = ?[0m  [["fan_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "follows" WHERE "follows"."fan_id" = ?  [["fan_id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered tweets/index.html.erb within layouts/application (23.4ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 2.0ms)
+
+SyntaxError (/Users/lingduokong/Documents/final/app/views/layouts/application.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting ')'
+...o "Message"  user_messages_path(session["user_id"]) );@outpu...
+...                               ^):
+  app/views/layouts/application.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting ')'
+
+
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (51.4ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (41.6ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (94.4ms)
+
+
+Started GET "/" for ::1 at 2015-05-29 16:14:16 -0500
+Processing by TweetsController#index as HTML
+  [1m[35mTweet Load (0.3ms)[0m  SELECT  "tweets".* FROM "tweets"  ORDER BY date desc LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "tweets"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 10]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "follows" WHERE "follows"."fan_id" = ?[0m  [["fan_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "follows" WHERE "follows"."fan_id" = ?  [["fan_id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered tweets/index.html.erb within layouts/application (15.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+Completed 200 OK in 40ms (Views: 37.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2015-05-29 16:14:18 -0500
+Processing by TweetsController#index as HTML
+  [1m[36mTweet Load (0.2ms)[0m  [1mSELECT  "tweets".* FROM "tweets"  ORDER BY date desc LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "tweets"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 10]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "follows" WHERE "follows"."fan_id" = ?  [["fan_id", 3]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT COUNT(*) FROM "follows" WHERE "follows"."fan_id" = ?[0m  [["fan_id", 3]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "tweets" WHERE "tweets"."user_id" = ?  [["user_id", 3]]
+  Rendered tweets/index.html.erb within layouts/application (15.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+Completed 200 OK in 38ms (Views: 36.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2015-05-29 16:14:20 -0500
+Processing by TweetsController#index as HTML
+  [1m[35mTweet Load (0.2ms)[0m  SELECT  "tweets".* FROM "tweets"  ORDER BY date desc LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tweets"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 10]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "follows" WHERE "follows"."fan_id" = ?[0m  [["fan_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "follows" WHERE "follows"."fan_id" = ?  [["fan_id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered tweets/index.html.erb within layouts/application (15.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+Completed 200 OK in 37ms (Views: 34.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2015-05-29 16:14:21 -0500
+Processing by TweetsController#index as HTML
+  [1m[36mTweet Load (0.3ms)[0m  [1mSELECT  "tweets".* FROM "tweets"  ORDER BY date desc LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "tweets"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 10]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "follows" WHERE "follows"."fan_id" = ?  [["fan_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "follows" WHERE "follows"."fan_id" = ?[0m  [["fan_id", 3]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "tweets" WHERE "tweets"."user_id" = ?  [["user_id", 3]]
+  Rendered tweets/index.html.erb within layouts/application (24.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+Completed 200 OK in 50ms (Views: 46.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2015-05-29 16:14:50 -0500
+Processing by TweetsController#index as HTML
+  [1m[35mTweet Load (0.2ms)[0m  SELECT  "tweets".* FROM "tweets"  ORDER BY date desc LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tweets"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 10]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "follows" WHERE "follows"."fan_id" = ?[0m  [["fan_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "follows" WHERE "follows"."fan_id" = ?  [["fan_id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered tweets/index.html.erb within layouts/application (13.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+Completed 200 OK in 42ms (Views: 33.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2015-05-29 16:14:51 -0500
+Processing by TweetsController#index as HTML
+  [1m[36mTweet Load (0.2ms)[0m  [1mSELECT  "tweets".* FROM "tweets"  ORDER BY date desc LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "tweets"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 10]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "follows" WHERE "follows"."fan_id" = ?  [["fan_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "follows" WHERE "follows"."fan_id" = ?[0m  [["fan_id", 3]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "tweets" WHERE "tweets"."user_id" = ?  [["user_id", 3]]
+  Rendered tweets/index.html.erb within layouts/application (12.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+Completed 200 OK in 33ms (Views: 31.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2015-05-29 16:15:13 -0500
+Processing by TweetsController#index as HTML
+  [1m[35mTweet Load (0.2ms)[0m  SELECT  "tweets".* FROM "tweets"  ORDER BY date desc LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tweets"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 10]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "follows" WHERE "follows"."fan_id" = ?[0m  [["fan_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "follows" WHERE "follows"."fan_id" = ?  [["fan_id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered tweets/index.html.erb within layouts/application (14.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+Completed 200 OK in 38ms (Views: 36.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2015-05-29 16:16:14 -0500
+Processing by TweetsController#index as HTML
+  [1m[36mTweet Load (0.4ms)[0m  [1mSELECT  "tweets".* FROM "tweets"  ORDER BY date desc LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "tweets"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 10]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "follows" WHERE "follows"."fan_id" = ?  [["fan_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "follows" WHERE "follows"."fan_id" = ?[0m  [["fan_id", 3]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "tweets" WHERE "tweets"."user_id" = ?  [["user_id", 3]]
+  Rendered tweets/index.html.erb within layouts/application (15.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+Completed 200 OK in 43ms (Views: 40.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/3/messages" for ::1 at 2015-05-29 16:16:16 -0500
+Processing by MessagesController#index as HTML
+  Parameters: {"user_id"=>"3"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `User' for nil:NilClass):
+  app/controllers/messages_controller.rb:4:in `index'
+
+
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.7ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (42.2ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (34.9ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (77.3ms)
+
+
+Started GET "/users/3/messages" for ::1 at 2015-05-29 16:16:17 -0500
+Processing by MessagesController#index as HTML
+  Parameters: {"user_id"=>"3"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `User' for nil:NilClass):
+  app/controllers/messages_controller.rb:4:in `index'
+
+
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.9ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (48.5ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (39.0ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (83.4ms)
+
+
+Started GET "/users/3/messages" for ::1 at 2015-05-29 16:16:28 -0500
+Processing by MessagesController#index as HTML
+  Parameters: {"user_id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered messages/index.html.erb within layouts/application (0.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+Completed 200 OK in 39ms (Views: 26.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2015-05-29 17:27:20 -0500
+Processing by TweetsController#index as HTML
+  [1m[35mTweet Load (0.2ms)[0m  SELECT  "tweets".* FROM "tweets"  ORDER BY date desc LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tweets"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 10]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "follows" WHERE "follows"."fan_id" = ?[0m  [["fan_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "follows" WHERE "follows"."fan_id" = ?  [["fan_id", 3]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered tweets/index.html.erb within layouts/application (27.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+Completed 200 OK in 66ms (Views: 58.0ms | ActiveRecord: 2.2ms)
