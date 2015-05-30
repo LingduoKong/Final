@@ -27,6 +27,13 @@
  	resize: none;
  }
 
+ .post-message{
+ 	width: 90%;
+ 	border: 2px solid;
+ 	border-radius: 10px;
+ 	resize: none;
+ }
+
  .tweet-image{
  	width:30%;
  	margin-top: 20px
