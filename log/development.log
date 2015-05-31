@@ -50427,3 +50427,1641 @@ Processing by FollowsController#create as JS
   Rendered follows/_follow_buttons.html.erb (3.6ms)
   Rendered follows/new.js.erb (5.9ms)
 Completed 200 OK in 24ms (Views: 11.2ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&keyword=h" for ::1 at 2015-05-31 14:02:58 -0500
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"h"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%h%')[0m
+  [1m[35mFollow Load (0.2ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1  [["fan_id", 1], ["star_id", 3]]
+  [1m[36mFollow Load (0.2ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 3]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1[0m  [["fan_id", 2], ["star_id", 3]]
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 2], ["fan_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 2], ["fan_id", 3]]
+  Rendered users/index.html.erb within layouts/application (13.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+Completed 200 OK in 66ms (Views: 51.3ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/users/1/follows" for ::1 at 2015-05-31 14:03:00 -0500
+
+SyntaxError (/Users/lingduokong/Documents/final/app/controllers/follows_controller.rb:5: syntax error, unexpected ':', expecting keyword_end
+	before_action: find_user
+	              ^):
+  app/controllers/follows_controller.rb:5: syntax error, unexpected ':', expecting keyword_end
+
+
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.9ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.5ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.9ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (42.2ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (41.1ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (103.5ms)
+
+
+Started GET "/" for ::1 at 2015-05-31 14:03:18 -0500
+Processing by TweetsController#index as HTML
+  [1m[36mTweet Load (0.4ms)[0m  [1mSELECT  "tweets".* FROM "tweets"  ORDER BY date desc LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "tweets"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 10]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "follows" WHERE "follows"."fan_id" = ?  [["fan_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "follows" WHERE "follows"."fan_id" = ?[0m  [["fan_id", 3]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "tweets" WHERE "tweets"."user_id" = ?  [["user_id", 3]]
+  Rendered tweets/index.html.erb within layouts/application (36.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+Completed 200 OK in 66ms (Views: 58.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&keyword=h" for ::1 at 2015-05-31 14:03:23 -0500
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"h"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%h%')
+  [1m[36mFollow Load (0.2ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1[0m  [["fan_id", 1], ["star_id", 3]]
+  [1m[35mFollow Load (0.2ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 3]]
+  [1m[35mFollow Load (0.2ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1  [["fan_id", 2], ["star_id", 3]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 2], ["fan_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 2], ["fan_id", 3]]
+  Rendered users/index.html.erb within layouts/application (6.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+Completed 200 OK in 49ms (Views: 46.9ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users/1/follows" for ::1 at 2015-05-31 14:03:26 -0500
+
+SyntaxError (/Users/lingduokong/Documents/final/app/controllers/follows_controller.rb:5: syntax error, unexpected ':', expecting keyword_end
+	before_action: find_user
+	              ^):
+  app/controllers/follows_controller.rb:5: syntax error, unexpected ':', expecting keyword_end
+
+
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.8ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.5ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.0ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (41.3ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (36.1ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/lingduokong/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (78.5ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&keyword=h" for ::1 at 2015-05-31 14:03:52 -0500
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"h"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%h%')
+  [1m[36mFollow Load (0.2ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1[0m  [["fan_id", 1], ["star_id", 3]]
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 3]]
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1  [["fan_id", 2], ["star_id", 3]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 2], ["fan_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 2], ["fan_id", 3]]
+  Rendered users/index.html.erb within layouts/application (15.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+Completed 200 OK in 60ms (Views: 45.6ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/users/1/follows" for ::1 at 2015-05-31 14:03:54 -0500
+Processing by FollowsController#create as JS
+  Parameters: {"user_id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "follows" ("star_id", "fan_id") VALUES (?, ?)  [["star_id", 1], ["fan_id", 3]]
+  [1m[36m (9.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1  [["fan_id", 1], ["star_id", 3]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 3]]
+  Rendered follows/_follow_buttons.html.erb (1.4ms)
+  Rendered follows/new.js.erb (2.9ms)
+Completed 200 OK in 20ms (Views: 7.5ms | ActiveRecord: 10.0ms)
+
+
+Started DELETE "/users/1/follows/122" for ::1 at 2015-05-31 14:03:56 -0500
+Processing by FollowsController#destroy as JS
+  Parameters: {"user_id"=>"1", "id"=>"122"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."id" = ? LIMIT 1  [["id", 122]]
+  [1m[36mSQL (9.5ms)[0m  [1mDELETE FROM "follows" WHERE "follows"."id" = ?[0m  [["id", 122]]
+  [1m[35mFollow Load (0.3ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1  [["fan_id", 1], ["star_id", 3]]
+  [1m[36mFollow Load (0.4ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 3]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 3]]
+  Rendered follows/_follow_buttons.html.erb (4.5ms)
+  Rendered follows/destroy.js.erb (7.2ms)
+Completed 200 OK in 25ms (Views: 11.4ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/connections" for ::1 at 2015-05-31 14:05:04 -0500
+Processing by ConnectionsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mConnection Load (0.5ms)[0m  SELECT "connections".* FROM "connections" WHERE (user_one_id = 3 OR user_two_id = 3)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered connections/index.html.erb within layouts/application (12.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+Completed 200 OK in 39ms (Views: 36.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&keyword=h" for ::1 at 2015-05-31 14:12:41 -0500
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"h"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%h%')
+  [1m[36mFollow Load (0.4ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1[0m  [["fan_id", 1], ["star_id", 3]]
+  [1m[35mFollow Load (0.3ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 3]]
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1  [["fan_id", 2], ["star_id", 3]]
+  [1m[36mFollow Load (0.2ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 2], ["fan_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 2], ["fan_id", 3]]
+  Rendered users/index.html.erb within layouts/application (8.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+Completed 200 OK in 36ms (Views: 34.2ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/users/1/follows" for ::1 at 2015-05-31 14:12:44 -0500
+Processing by FollowsController#create as JS
+  Parameters: {"user_id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "follows" ("star_id", "fan_id") VALUES (?, ?)  [["star_id", 1], ["fan_id", 3]]
+  [1m[36m (9.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1  [["fan_id", 1], ["star_id", 3]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 3]]
+  Rendered follows/_follow_buttons.html.erb (1.6ms)
+  Rendered follows/new.js.erb (3.6ms)
+Completed 200 OK in 24ms (Views: 7.7ms | ActiveRecord: 10.8ms)
+
+
+Started DELETE "/users/1/follows/123" for ::1 at 2015-05-31 14:12:44 -0500
+Processing by FollowsController#destroy as JS
+  Parameters: {"user_id"=>"1", "id"=>"123"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."id" = ? LIMIT 1  [["id", 123]]
+  [1m[36mSQL (8.9ms)[0m  [1mDELETE FROM "follows" WHERE "follows"."id" = ?[0m  [["id", 123]]
+  [1m[35mFollow Load (0.3ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1  [["fan_id", 1], ["star_id", 3]]
+  [1m[36mFollow Load (0.2ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 3]]
+  Rendered follows/_follow_buttons.html.erb (3.2ms)
+  Rendered follows/destroy.js.erb (5.5ms)
+Completed 200 OK in 21ms (Views: 9.7ms | ActiveRecord: 9.6ms)
+
+
+Started POST "/users/1/follows" for ::1 at 2015-05-31 14:12:45 -0500
+Processing by FollowsController#create as JS
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "follows" ("star_id", "fan_id") VALUES (?, ?)[0m  [["star_id", 1], ["fan_id", 3]]
+  [1m[35m (8.9ms)[0m  commit transaction
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1[0m  [["fan_id", 1], ["star_id", 3]]
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 3]]
+  Rendered follows/_follow_buttons.html.erb (1.6ms)
+  Rendered follows/new.js.erb (3.5ms)
+Completed 200 OK in 21ms (Views: 8.5ms | ActiveRecord: 9.7ms)
+
+
+Started DELETE "/users/1/follows/124" for ::1 at 2015-05-31 14:12:45 -0500
+Processing by FollowsController#destroy as JS
+  Parameters: {"user_id"=>"1", "id"=>"124"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."id" = ? LIMIT 1[0m  [["id", 124]]
+  [1m[35mSQL (9.2ms)[0m  DELETE FROM "follows" WHERE "follows"."id" = ?  [["id", 124]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1[0m  [["fan_id", 1], ["star_id", 3]]
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 3]]
+  Rendered follows/_follow_buttons.html.erb (1.2ms)
+  Rendered follows/destroy.js.erb (2.8ms)
+Completed 200 OK in 18ms (Views: 6.6ms | ActiveRecord: 9.6ms)
+
+
+Started POST "/users/1/follows" for ::1 at 2015-05-31 14:12:46 -0500
+Processing by FollowsController#create as JS
+  Parameters: {"user_id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "follows" ("star_id", "fan_id") VALUES (?, ?)  [["star_id", 1], ["fan_id", 3]]
+  [1m[36m (8.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1  [["fan_id", 1], ["star_id", 3]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 3]]
+  Rendered follows/_follow_buttons.html.erb (1.7ms)
+  Rendered follows/new.js.erb (3.7ms)
+Completed 200 OK in 19ms (Views: 7.9ms | ActiveRecord: 8.8ms)
+
+
+Started DELETE "/users/1/follows/125" for ::1 at 2015-05-31 14:12:47 -0500
+Processing by FollowsController#destroy as JS
+  Parameters: {"user_id"=>"1", "id"=>"125"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."id" = ? LIMIT 1  [["id", 125]]
+  [1m[36mSQL (9.2ms)[0m  [1mDELETE FROM "follows" WHERE "follows"."id" = ?[0m  [["id", 125]]
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1  [["fan_id", 1], ["star_id", 3]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 3]]
+  Rendered follows/_follow_buttons.html.erb (2.3ms)
+  Rendered follows/destroy.js.erb (4.2ms)
+Completed 200 OK in 20ms (Views: 7.9ms | ActiveRecord: 9.6ms)
+
+
+Started POST "/users/1/follows" for ::1 at 2015-05-31 14:12:49 -0500
+Processing by FollowsController#create as JS
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "follows" ("star_id", "fan_id") VALUES (?, ?)[0m  [["star_id", 1], ["fan_id", 3]]
+  [1m[35m (8.9ms)[0m  commit transaction
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1[0m  [["fan_id", 1], ["star_id", 3]]
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 3]]
+  Rendered follows/_follow_buttons.html.erb (1.5ms)
+  Rendered follows/new.js.erb (2.9ms)
+Completed 200 OK in 19ms (Views: 7.3ms | ActiveRecord: 9.5ms)
+
+
+Started DELETE "/users/1/follows/126" for ::1 at 2015-05-31 14:12:49 -0500
+Processing by FollowsController#destroy as JS
+  Parameters: {"user_id"=>"1", "id"=>"126"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."id" = ? LIMIT 1[0m  [["id", 126]]
+  [1m[35mSQL (9.3ms)[0m  DELETE FROM "follows" WHERE "follows"."id" = ?  [["id", 126]]
+  [1m[36mFollow Load (0.2ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1[0m  [["fan_id", 1], ["star_id", 3]]
+  [1m[35mFollow Load (0.2ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 3]]
+  Rendered follows/_follow_buttons.html.erb (2.4ms)
+  Rendered follows/destroy.js.erb (4.5ms)
+Completed 200 OK in 20ms (Views: 8.1ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/users/1/follows" for ::1 at 2015-05-31 14:12:50 -0500
+Processing by FollowsController#create as JS
+  Parameters: {"user_id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "follows" ("star_id", "fan_id") VALUES (?, ?)  [["star_id", 1], ["fan_id", 3]]
+  [1m[36m (8.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mFollow Load (0.2ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1  [["fan_id", 1], ["star_id", 3]]
+  [1m[36mFollow Load (0.2ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 3]]
+  Rendered follows/_follow_buttons.html.erb (2.9ms)
+  Rendered follows/new.js.erb (4.6ms)
+Completed 200 OK in 20ms (Views: 8.1ms | ActiveRecord: 9.6ms)
+
+
+Started DELETE "/users/1/follows/127" for ::1 at 2015-05-31 14:12:50 -0500
+Processing by FollowsController#destroy as JS
+  Parameters: {"user_id"=>"1", "id"=>"127"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."id" = ? LIMIT 1  [["id", 127]]
+  [1m[36mSQL (9.7ms)[0m  [1mDELETE FROM "follows" WHERE "follows"."id" = ?[0m  [["id", 127]]
+  [1m[35mFollow Load (0.2ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1  [["fan_id", 1], ["star_id", 3]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 3]]
+  Rendered follows/_follow_buttons.html.erb (1.9ms)
+  Rendered follows/destroy.js.erb (3.8ms)
+Completed 200 OK in 20ms (Views: 7.8ms | ActiveRecord: 10.2ms)
+
+
+Started POST "/users/1/follows" for ::1 at 2015-05-31 14:12:51 -0500
+Processing by FollowsController#create as JS
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "follows" ("star_id", "fan_id") VALUES (?, ?)[0m  [["star_id", 1], ["fan_id", 3]]
+  [1m[35m (9.5ms)[0m  commit transaction
+  [1m[36mFollow Load (0.3ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1[0m  [["fan_id", 1], ["star_id", 3]]
+  [1m[35mFollow Load (0.3ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 3]]
+  Rendered follows/_follow_buttons.html.erb (3.8ms)
+  Rendered follows/new.js.erb (6.2ms)
+Completed 200 OK in 25ms (Views: 11.9ms | ActiveRecord: 10.5ms)
+
+
+Started DELETE "/users/1/follows/128" for ::1 at 2015-05-31 14:12:52 -0500
+Processing by FollowsController#destroy as JS
+  Parameters: {"user_id"=>"1", "id"=>"128"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mFollow Load (0.2ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."id" = ? LIMIT 1[0m  [["id", 128]]
+  [1m[35mSQL (8.9ms)[0m  DELETE FROM "follows" WHERE "follows"."id" = ?  [["id", 128]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1[0m  [["fan_id", 1], ["star_id", 3]]
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 3]]
+  Rendered follows/_follow_buttons.html.erb (1.3ms)
+  Rendered follows/destroy.js.erb (2.9ms)
+Completed 200 OK in 19ms (Views: 7.9ms | ActiveRecord: 9.5ms)
+
+
+Started POST "/users/1/follows" for ::1 at 2015-05-31 14:12:52 -0500
+Processing by FollowsController#create as JS
+  Parameters: {"user_id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "follows" ("star_id", "fan_id") VALUES (?, ?)  [["star_id", 1], ["fan_id", 3]]
+  [1m[36m (8.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1  [["fan_id", 1], ["star_id", 3]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 3]]
+  Rendered follows/_follow_buttons.html.erb (2.0ms)
+  Rendered follows/new.js.erb (4.0ms)
+Completed 200 OK in 20ms (Views: 7.9ms | ActiveRecord: 9.5ms)
+
+
+Started DELETE "/users/1/follows/129" for ::1 at 2015-05-31 14:12:53 -0500
+Processing by FollowsController#destroy as JS
+  Parameters: {"user_id"=>"1", "id"=>"129"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."id" = ? LIMIT 1  [["id", 129]]
+  [1m[36mSQL (8.9ms)[0m  [1mDELETE FROM "follows" WHERE "follows"."id" = ?[0m  [["id", 129]]
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1  [["fan_id", 1], ["star_id", 3]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 3]]
+  Rendered follows/_follow_buttons.html.erb (1.3ms)
+  Rendered follows/destroy.js.erb (2.8ms)
+Completed 200 OK in 18ms (Views: 6.6ms | ActiveRecord: 9.3ms)
+
+
+Started POST "/users/1/follows" for ::1 at 2015-05-31 14:12:53 -0500
+Processing by FollowsController#create as JS
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "follows" ("star_id", "fan_id") VALUES (?, ?)[0m  [["star_id", 1], ["fan_id", 3]]
+  [1m[35m (8.7ms)[0m  commit transaction
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1[0m  [["fan_id", 1], ["star_id", 3]]
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 3]]
+  Rendered follows/_follow_buttons.html.erb (1.4ms)
+  Rendered follows/new.js.erb (2.7ms)
+Completed 200 OK in 18ms (Views: 6.3ms | ActiveRecord: 9.4ms)
+
+
+Started DELETE "/users/1/follows/130" for ::1 at 2015-05-31 14:12:53 -0500
+Processing by FollowsController#destroy as JS
+  Parameters: {"user_id"=>"1", "id"=>"130"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."id" = ? LIMIT 1[0m  [["id", 130]]
+  [1m[35mSQL (9.3ms)[0m  DELETE FROM "follows" WHERE "follows"."id" = ?  [["id", 130]]
+  [1m[36mFollow Load (0.3ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1[0m  [["fan_id", 1], ["star_id", 3]]
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 3]]
+  Rendered follows/_follow_buttons.html.erb (3.0ms)
+  Rendered follows/destroy.js.erb (5.2ms)
+Completed 200 OK in 21ms (Views: 8.9ms | ActiveRecord: 9.9ms)
+
+
+Started POST "/users/1/follows" for ::1 at 2015-05-31 14:12:54 -0500
+Processing by FollowsController#create as JS
+  Parameters: {"user_id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "follows" ("star_id", "fan_id") VALUES (?, ?)  [["star_id", 1], ["fan_id", 3]]
+  [1m[36m (8.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1  [["fan_id", 1], ["star_id", 3]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 3]]
+  Rendered follows/_follow_buttons.html.erb (2.1ms)
+  Rendered follows/new.js.erb (4.0ms)
+Completed 200 OK in 20ms (Views: 7.8ms | ActiveRecord: 9.4ms)
+
+
+Started DELETE "/users/1/follows/131" for ::1 at 2015-05-31 14:12:54 -0500
+Processing by FollowsController#destroy as JS
+  Parameters: {"user_id"=>"1", "id"=>"131"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."id" = ? LIMIT 1  [["id", 131]]
+  [1m[36mSQL (8.4ms)[0m  [1mDELETE FROM "follows" WHERE "follows"."id" = ?[0m  [["id", 131]]
+  [1m[35mFollow Load (0.2ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1  [["fan_id", 1], ["star_id", 3]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 3]]
+  Rendered follows/_follow_buttons.html.erb (1.3ms)
+  Rendered follows/destroy.js.erb (2.8ms)
+Completed 200 OK in 19ms (Views: 8.2ms | ActiveRecord: 8.9ms)
+
+
+Started POST "/users/1/follows" for ::1 at 2015-05-31 14:12:55 -0500
+Processing by FollowsController#create as JS
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "follows" ("star_id", "fan_id") VALUES (?, ?)[0m  [["star_id", 1], ["fan_id", 3]]
+  [1m[35m (8.6ms)[0m  commit transaction
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1[0m  [["fan_id", 1], ["star_id", 3]]
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 3]]
+  Rendered follows/_follow_buttons.html.erb (1.3ms)
+  Rendered follows/new.js.erb (3.0ms)
+Completed 200 OK in 19ms (Views: 7.8ms | ActiveRecord: 9.2ms)
+
+
+Started DELETE "/users/1/follows/132" for ::1 at 2015-05-31 14:12:55 -0500
+Processing by FollowsController#destroy as JS
+  Parameters: {"user_id"=>"1", "id"=>"132"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."id" = ? LIMIT 1[0m  [["id", 132]]
+  [1m[35mSQL (9.5ms)[0m  DELETE FROM "follows" WHERE "follows"."id" = ?  [["id", 132]]
+  [1m[36mFollow Load (0.2ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1[0m  [["fan_id", 1], ["star_id", 3]]
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 3]]
+  Rendered follows/_follow_buttons.html.erb (1.4ms)
+  Rendered follows/destroy.js.erb (3.4ms)
+Completed 200 OK in 19ms (Views: 7.0ms | ActiveRecord: 9.9ms)
+
+
+Started POST "/users/1/follows" for ::1 at 2015-05-31 14:12:56 -0500
+Processing by FollowsController#create as JS
+  Parameters: {"user_id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "follows" ("star_id", "fan_id") VALUES (?, ?)  [["star_id", 1], ["fan_id", 3]]
+  [1m[36m (8.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mFollow Load (0.3ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1  [["fan_id", 1], ["star_id", 3]]
+  [1m[36mFollow Load (0.2ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 3]]
+  Rendered follows/_follow_buttons.html.erb (3.4ms)
+  Rendered follows/new.js.erb (5.1ms)
+Completed 200 OK in 21ms (Views: 8.7ms | ActiveRecord: 9.6ms)
+
+
+Started DELETE "/users/1/follows/133" for ::1 at 2015-05-31 14:12:56 -0500
+Processing by FollowsController#destroy as JS
+  Parameters: {"user_id"=>"1", "id"=>"133"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."id" = ? LIMIT 1  [["id", 133]]
+  [1m[36mSQL (8.8ms)[0m  [1mDELETE FROM "follows" WHERE "follows"."id" = ?[0m  [["id", 133]]
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1  [["fan_id", 1], ["star_id", 3]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 3]]
+  Rendered follows/_follow_buttons.html.erb (1.3ms)
+  Rendered follows/destroy.js.erb (2.8ms)
+Completed 200 OK in 18ms (Views: 6.8ms | ActiveRecord: 9.3ms)
+
+
+Started POST "/users/1/follows" for ::1 at 2015-05-31 14:12:57 -0500
+Processing by FollowsController#create as JS
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "follows" ("star_id", "fan_id") VALUES (?, ?)[0m  [["star_id", 1], ["fan_id", 3]]
+  [1m[35m (8.8ms)[0m  commit transaction
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1[0m  [["fan_id", 1], ["star_id", 3]]
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 3]]
+  Rendered follows/_follow_buttons.html.erb (1.3ms)
+  Rendered follows/new.js.erb (3.2ms)
+Completed 200 OK in 20ms (Views: 8.0ms | ActiveRecord: 9.4ms)
+
+
+Started DELETE "/users/1/follows/134" for ::1 at 2015-05-31 14:13:05 -0500
+Processing by FollowsController#destroy as JS
+  Parameters: {"user_id"=>"1", "id"=>"134"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."id" = ? LIMIT 1[0m  [["id", 134]]
+  [1m[35mSQL (10.1ms)[0m  DELETE FROM "follows" WHERE "follows"."id" = ?  [["id", 134]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1[0m  [["fan_id", 1], ["star_id", 3]]
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 3]]
+  Rendered follows/_follow_buttons.html.erb (1.2ms)
+  Rendered follows/destroy.js.erb (3.0ms)
+Completed 200 OK in 20ms (Views: 7.5ms | ActiveRecord: 10.5ms)
+
+
+Started POST "/users/1/follows" for ::1 at 2015-05-31 14:13:06 -0500
+Processing by FollowsController#create as JS
+  Parameters: {"user_id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "follows" ("star_id", "fan_id") VALUES (?, ?)  [["star_id", 1], ["fan_id", 3]]
+  [1m[36m (9.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1  [["fan_id", 1], ["star_id", 3]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 3]]
+  Rendered follows/_follow_buttons.html.erb (1.2ms)
+  Rendered follows/new.js.erb (14.8ms)
+Completed 200 OK in 32ms (Views: 18.5ms | ActiveRecord: 10.3ms)
+
+
+Started DELETE "/users/1/follows/135" for ::1 at 2015-05-31 14:13:07 -0500
+Processing by FollowsController#destroy as JS
+  Parameters: {"user_id"=>"1", "id"=>"135"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mFollow Load (0.2ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."id" = ? LIMIT 1  [["id", 135]]
+  [1m[36mSQL (10.4ms)[0m  [1mDELETE FROM "follows" WHERE "follows"."id" = ?[0m  [["id", 135]]
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1  [["fan_id", 1], ["star_id", 3]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 3]]
+  Rendered follows/_follow_buttons.html.erb (1.4ms)
+  Rendered follows/destroy.js.erb (2.7ms)
+Completed 200 OK in 22ms (Views: 7.1ms | ActiveRecord: 10.9ms)
+
+
+Started POST "/users/1/follows" for ::1 at 2015-05-31 14:13:07 -0500
+Processing by FollowsController#create as JS
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "follows" ("star_id", "fan_id") VALUES (?, ?)[0m  [["star_id", 1], ["fan_id", 3]]
+  [1m[35m (8.7ms)[0m  commit transaction
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1[0m  [["fan_id", 1], ["star_id", 3]]
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 3]]
+  Rendered follows/_follow_buttons.html.erb (1.3ms)
+  Rendered follows/new.js.erb (3.1ms)
+Completed 200 OK in 18ms (Views: 6.8ms | ActiveRecord: 9.3ms)
+
+
+Started DELETE "/users/1/follows/136" for ::1 at 2015-05-31 14:13:08 -0500
+Processing by FollowsController#destroy as JS
+  Parameters: {"user_id"=>"1", "id"=>"136"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."id" = ? LIMIT 1[0m  [["id", 136]]
+  [1m[35mSQL (9.3ms)[0m  DELETE FROM "follows" WHERE "follows"."id" = ?  [["id", 136]]
+  [1m[36mFollow Load (0.3ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1[0m  [["fan_id", 1], ["star_id", 3]]
+  [1m[35mFollow Load (0.2ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 3]]
+  Rendered follows/_follow_buttons.html.erb (3.0ms)
+  Rendered follows/destroy.js.erb (4.8ms)
+Completed 200 OK in 20ms (Views: 8.5ms | ActiveRecord: 9.9ms)
+
+
+Started POST "/users/1/follows" for ::1 at 2015-05-31 14:13:08 -0500
+Processing by FollowsController#create as JS
+  Parameters: {"user_id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "follows" ("star_id", "fan_id") VALUES (?, ?)  [["star_id", 1], ["fan_id", 3]]
+  [1m[36m (9.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1  [["fan_id", 1], ["star_id", 3]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 3]]
+  Rendered follows/_follow_buttons.html.erb (1.6ms)
+  Rendered follows/new.js.erb (3.3ms)
+Completed 200 OK in 20ms (Views: 7.9ms | ActiveRecord: 9.8ms)
+
+
+Started DELETE "/users/2/follows/121" for ::1 at 2015-05-31 14:13:09 -0500
+Processing by FollowsController#destroy as JS
+  Parameters: {"user_id"=>"2", "id"=>"121"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."id" = ? LIMIT 1  [["id", 121]]
+  [1m[36mSQL (8.9ms)[0m  [1mDELETE FROM "follows" WHERE "follows"."id" = ?[0m  [["id", 121]]
+  [1m[35mFollow Load (0.2ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1  [["fan_id", 2], ["star_id", 3]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 2], ["fan_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 2], ["fan_id", 3]]
+  Rendered follows/_follow_buttons.html.erb (1.8ms)
+  Rendered follows/destroy.js.erb (3.6ms)
+Completed 200 OK in 20ms (Views: 7.9ms | ActiveRecord: 9.3ms)
+
+
+Started POST "/users/2/follows" for ::1 at 2015-05-31 14:13:10 -0500
+Processing by FollowsController#create as JS
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "follows" ("star_id", "fan_id") VALUES (?, ?)[0m  [["star_id", 2], ["fan_id", 3]]
+  [1m[35m (7.7ms)[0m  commit transaction
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1[0m  [["fan_id", 2], ["star_id", 3]]
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 2], ["fan_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 2], ["fan_id", 3]]
+  Rendered follows/_follow_buttons.html.erb (1.3ms)
+  Rendered follows/new.js.erb (2.7ms)
+Completed 200 OK in 19ms (Views: 8.4ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/connections" for ::1 at 2015-05-31 14:13:41 -0500
+Processing by ConnectionsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mConnection Load (0.2ms)[0m  [1mSELECT "connections".* FROM "connections" WHERE (user_one_id = 3 OR user_two_id = 3)[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered connections/index.html.erb within layouts/application (3.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+Completed 200 OK in 36ms (Views: 35.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/connections/1/messages" for ::1 at 2015-05-31 14:13:52 -0500
+Processing by MessagesController#index as HTML
+  Parameters: {"connection_id"=>"1"}
+  [1m[36mConnection Load (0.2ms)[0m  [1mSELECT  "connections".* FROM "connections" WHERE "connections"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT  "messages".* FROM "messages" WHERE "messages"."connection_id" = ?  ORDER BY date LIMIT 100[0m  [["connection_id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered messages/index.html.erb within layouts/application (6.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+Completed 200 OK in 54ms (Views: 28.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&keyword=f" for ::1 at 2015-05-31 14:13:58 -0500
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"f"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%f%')[0m
+  Rendered users/index.html.erb within layouts/application (0.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+Completed 200 OK in 45ms (Views: 44.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&keyword=w" for ::1 at 2015-05-31 14:14:02 -0500
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"w"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%w%')[0m
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1  [["fan_id", 1], ["star_id", 3]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 3]]
+  Rendered users/index.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+Completed 200 OK in 46ms (Views: 44.5ms | ActiveRecord: 0.4ms)
+  [1m[36mConnection Load (0.2ms)[0m  [1mSELECT  "connections".* FROM "connections" WHERE "connections"."user_one_id" = ? AND "connections"."user_two_id" = ? LIMIT 1[0m  [["user_one_id", 2], ["user_two_id", 3]]
+  [1m[35mConnection Load (0.1ms)[0m  SELECT  "connections".* FROM "connections" WHERE "connections"."user_one_id" = ? AND "connections"."user_two_id" = ? LIMIT 1  [["user_one_id", 2], ["user_two_id", 3]]
+  [1m[36mConnection Load (0.1ms)[0m  [1mSELECT  "connections".* FROM "connections" WHERE "connections"."user_one_id" = ? AND "connections"."user_two_id" = ? LIMIT 1[0m  [["user_one_id", 3], ["user_two_id", 2]]
+  [1m[35mConnection Load (0.2ms)[0m  SELECT  "connections".* FROM "connections" WHERE "connections"."user_one_id" = ? AND "connections"."user_two_id" = ? LIMIT 1  [["user_one_id", 2], ["user_two_id", 3]]
+  [1m[36mConnection Load (0.1ms)[0m  [1mSELECT  "connections".* FROM "connections" WHERE "connections"."user_one_id" = ? AND "connections"."user_two_id" = ? LIMIT 1[0m  [["user_one_id", 3], ["user_two_id", 2]]
+
+
+Started GET "/users?utf8=%E2%9C%93&keyword=w" for ::1 at 2015-05-31 14:38:14 -0500
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"w"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%w%')
+  [1m[36mFollow Load (0.2ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1[0m  [["fan_id", 1], ["star_id", 3]]
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 3]]
+  [1m[35mConnection Load (0.1ms)[0m  SELECT  "connections".* FROM "connections" WHERE "connections"."user_one_id" = ? AND "connections"."user_two_id" = ? LIMIT 1  [["user_one_id", 1], ["user_two_id", 3]]
+  Rendered users/index.html.erb within layouts/application (4.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+Completed 200 OK in 37ms (Views: 35.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/connections/2/messages" for ::1 at 2015-05-31 14:38:17 -0500
+Processing by MessagesController#index as HTML
+  Parameters: {"authenticity_token"=>"Ff9WqYfsNqNUhmJOQslukRmZNJXEwnhYfbmfX5YmmHQa3tqlZFObdV0FIOk7spKc6Yvb2BdZPKJnVW1pceXWMw==", "connection_id"=>"2"}
+  [1m[35mConnection Load (0.2ms)[0m  SELECT  "connections".* FROM "connections" WHERE "connections"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mMessage Load (0.7ms)[0m  SELECT  "messages".* FROM "messages" WHERE "messages"."connection_id" = ?  ORDER BY date LIMIT 100  [["connection_id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered messages/index.html.erb within layouts/application (5.5ms)
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+Completed 200 OK in 39ms (Views: 36.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/connections/2/messages" for ::1 at 2015-05-31 14:38:21 -0500
+Processing by MessagesController#index as HTML
+  Parameters: {"authenticity_token"=>"Ff9WqYfsNqNUhmJOQslukRmZNJXEwnhYfbmfX5YmmHQa3tqlZFObdV0FIOk7spKc6Yvb2BdZPKJnVW1pceXWMw==", "connection_id"=>"2"}
+  [1m[35mConnection Load (0.1ms)[0m  SELECT  "connections".* FROM "connections" WHERE "connections"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mMessage Load (0.2ms)[0m  SELECT  "messages".* FROM "messages" WHERE "messages"."connection_id" = ?  ORDER BY date LIMIT 100  [["connection_id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered messages/index.html.erb within layouts/application (5.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+Completed 200 OK in 38ms (Views: 35.9ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "connections" ("id", "user_one_id", "user_two_id", "last_message") VALUES (?, ?, ?, ?)[0m  [["id", 3], ["user_one_id", 1], ["user_two_id", 2], ["last_message", "last message"]]
+  [1m[35m (8.0ms)[0m  commit transaction
+
+
+Started GET "/users?utf8=%E2%9C%93&keyword=w" for ::1 at 2015-05-31 14:44:13 -0500
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"w"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%w%')
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1[0m  [["fan_id", 1], ["star_id", 3]]
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 3]]
+  [1m[35mConnection Load (0.1ms)[0m  SELECT  "connections".* FROM "connections" WHERE "connections"."user_one_id" = ? AND "connections"."user_two_id" = ? LIMIT 1  [["user_one_id", 1], ["user_two_id", 3]]
+  Rendered users/index.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+Completed 200 OK in 35ms (Views: 33.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/connections/2/messages" for ::1 at 2015-05-31 14:44:15 -0500
+Processing by MessagesController#index as HTML
+  Parameters: {"authenticity_token"=>"ZK80NR4nPQrXhrooFXwgE7wYkzECFiYMeQziqXP8kYZrjrg5/ZiQ3N4F+I9sB9weTAp8fNGNYvZj4BCflD/fwQ==", "connection_id"=>"2"}
+  [1m[35mConnection Load (0.1ms)[0m  SELECT  "connections".* FROM "connections" WHERE "connections"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mMessage Load (0.6ms)[0m  SELECT  "messages".* FROM "messages" WHERE "messages"."connection_id" = ?  ORDER BY date LIMIT 100  [["connection_id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered messages/index.html.erb within layouts/application (5.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+Completed 200 OK in 36ms (Views: 33.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/logout" for ::1 at 2015-05-31 14:44:20 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-05-31 14:44:20 -0500
+Processing by TweetsController#index as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :find_user rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-05-31 14:44:20 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 27ms (Views: 26.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-05-31 14:44:23 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 39ms (Views: 38.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2015-05-31 14:44:26 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 34ms (Views: 33.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2015-05-31 14:44:40 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9TQVYGOLXtljybt69nXOaiLCdcYAolojbiN2QMlEIdf6FZlsgDTzD2pK+d2PDjJn0tCai9M5Htl0z4R2LodvkA==", "username"=>"fewafewaf", "email"=>"lingduokong@gmail", "password"=>"[FILTERED]", "button"=>""}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'lingduokong@gmail' LIMIT 1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'fewafewaf' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "users" ("username", "email", "password_digest") VALUES (?, ?, ?)[0m  [["username", "fewafewaf"], ["email", "lingduokong@gmail"], ["password_digest", "$2a$10$QV/zMFmau6O.BouGh447DO0g5plgEDeBAP66qnWak5F5wF3YNCvfy"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 93ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/" for ::1 at 2015-05-31 14:44:41 -0500
+Processing by TweetsController#index as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :find_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-05-31 14:44:41 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 60ms (Views: 58.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-05-31 14:44:52 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 36ms (Views: 35.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2015-05-31 14:45:00 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"C8IK3Kko24IcPdR2AqS26c+ORJYkCdpT7IyisXtCLMUE44bQSpd2VBW+ltF730rkP5yr2/eSnqn2YFCHnIFigg==", "email"=>"lingduokong@gmail.com", "password"=>"[FILTERED]", "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "lingduokong@gmail.com"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-05-31 14:45:00 -0500
+Processing by TweetsController#index as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :find_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-05-31 14:45:00 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 49ms (Views: 48.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2015-05-31 14:45:09 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sxRwQA1E7cnP0LYIZm7i2ryDB4I1DuN5LOiRAg3JoTW8NfxM7vtAH8ZT9K8fFR7XTJHoz+aVp4M2BGM06grvcg==", "email"=>"lingduokong@gmail.com", "password"=>"[FILTERED]", "button"=>""}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "lingduokong@gmail.com"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2015-05-31 14:45:09 -0500
+Processing by TweetsController#index as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :find_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-05-31 14:45:09 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 51ms (Views: 50.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2015-05-31 14:45:15 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fs2Qs4DpURSXbWV16wYFOlL4LIfmR2oQLvRVjEBM8TFx7By/Y1b8wp7uJ9KSffk3ourDyjXcLuo0GKe6p4+/dg==", "email"=>"lingduokong@gamil.edu", "password"=>"[FILTERED]", "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "lingduokong@gamil.edu"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2015-05-31 14:45:15 -0500
+Processing by TweetsController#index as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :find_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-05-31 14:45:15 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 60ms (Views: 58.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2015-05-31 14:45:18 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 36ms (Views: 35.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2015-05-31 14:45:32 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9FVxj6dASNvkFUYdkHpxqCeXitj+1FpckX1RMeh82637dP2DRP/lDe2WBLrpAY2l14VllS1PHqaLkaMHD7+V6g==", "username"=>"kld", "email"=>"kld@uchicago.edu", "password"=>"[FILTERED]", "button"=>""}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'kld@uchicago.edu' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'kld' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "email", "password_digest") VALUES (?, ?, ?)[0m  [["username", "kld"], ["email", "kld@uchicago.edu"], ["password_digest", "$2a$10$/.9s5SAdBHsc9lJqe8cY1.zf9dmrZY9dAuMBqBLRS3aXteB0L6EFy"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 78ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2015-05-31 14:45:32 -0500
+Processing by TweetsController#index as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :find_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-05-31 14:45:32 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 50ms (Views: 49.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-05-31 14:45:34 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 44ms (Views: 43.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2015-05-31 14:45:40 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pZ6EoTBS267ZHw6QYvirxK+VVZUoPrAz319P3IGmiEiqvwit0+12eNCcTDcbg1fJX4e62Pul9MnFs73qZmXGDw==", "email"=>"kld@uchicago.edu", "password"=>"[FILTERED]", "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "kld@uchicago.edu"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 74ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2015-05-31 14:45:40 -0500
+Processing by TweetsController#index as HTML
+  [1m[35mTweet Load (0.2ms)[0m  SELECT  "tweets".* FROM "tweets"  ORDER BY date desc LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "tweets"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 10]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 2]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "follows" WHERE "follows"."fan_id" = ?[0m  [["fan_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "follows" WHERE "follows"."fan_id" = ?  [["fan_id", 5]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 5]]
+  Rendered tweets/index.html.erb within layouts/application (44.2ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+Completed 200 OK in 109ms (Views: 95.8ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/connections" for ::1 at 2015-05-31 14:45:45 -0500
+Processing by ConnectionsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mConnection Load (0.5ms)[0m  SELECT "connections".* FROM "connections" WHERE (user_one_id = 5 OR user_two_id = 5)
+  Rendered connections/index.html.erb within layouts/application (2.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 37ms (Views: 35.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&keyword=h" for ::1 at 2015-05-31 14:45:51 -0500
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"h"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%h%')
+  [1m[36mFollow Load (0.2ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1[0m  [["fan_id", 1], ["star_id", 5]]
+  [1m[35mFollow Load (0.8ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 5]]
+  [1m[36mConnection Load (0.1ms)[0m  [1mSELECT  "connections".* FROM "connections" WHERE "connections"."user_one_id" = ? AND "connections"."user_two_id" = ? LIMIT 1[0m  [["user_one_id", 1], ["user_two_id", 5]]
+  [1m[35mConnection Load (0.1ms)[0m  SELECT  "connections".* FROM "connections" WHERE "connections"."user_one_id" = ? AND "connections"."user_two_id" = ? LIMIT 1  [["user_one_id", 5], ["user_two_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "connections" ("user_one_id", "user_two_id", "date") VALUES (?, ?, ?)  [["user_one_id", 1], ["user_two_id", 5], ["date", 1433101551]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1  [["fan_id", 2], ["star_id", 5]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 2], ["fan_id", 5]]
+  [1m[35mConnection Load (0.1ms)[0m  SELECT  "connections".* FROM "connections" WHERE "connections"."user_one_id" = ? AND "connections"."user_two_id" = ? LIMIT 1  [["user_one_id", 2], ["user_two_id", 5]]
+  [1m[36mConnection Load (0.1ms)[0m  [1mSELECT  "connections".* FROM "connections" WHERE "connections"."user_one_id" = ? AND "connections"."user_two_id" = ? LIMIT 1[0m  [["user_one_id", 5], ["user_two_id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "connections" ("user_one_id", "user_two_id", "date") VALUES (?, ?, ?)[0m  [["user_one_id", 2], ["user_two_id", 5], ["date", 1433101551]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  Rendered users/index.html.erb within layouts/application (16.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 75ms (Views: 68.7ms | ActiveRecord: 5.2ms)
+
+
+Started POST "/users/1/follows" for ::1 at 2015-05-31 14:45:54 -0500
+Processing by FollowsController#create as JS
+  Parameters: {"user_id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "follows" ("star_id", "fan_id") VALUES (?, ?)  [["star_id", 1], ["fan_id", 5]]
+  [1m[36m (8.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1  [["fan_id", 1], ["star_id", 5]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 5]]
+  Rendered follows/_follow_buttons.html.erb (1.6ms)
+  Rendered follows/new.js.erb (3.4ms)
+Completed 200 OK in 24ms (Views: 9.3ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/users/1/follows" for ::1 at 2015-05-31 14:46:21 -0500
+Processing by FollowsController#index as HTML
+  Parameters: {"authenticity_token"=>"tWwz8qFFM2U6+fnTR+lyv42t6144ue03xoJubXGdCTW6Tb/+QvqeszN6u3Q+ko6yfb8EE+siqc3cbpxbll5Hcg==", "user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."star_id" WHERE "follows"."fan_id" = ?  [["fan_id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."fan_id" WHERE "follows"."star_id" = ?[0m  [["star_id", 1]]
+  Rendered follows/index.html.erb within layouts/application (22.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+Completed 200 OK in 49ms (Views: 47.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users/2/follows" for ::1 at 2015-05-31 14:46:37 -0500
+Processing by FollowsController#create as JS
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (2.9ms)[0m  [1mINSERT INTO "follows" ("star_id", "fan_id") VALUES (?, ?)[0m  [["star_id", 2], ["fan_id", 5]]
+  [1m[35m (8.9ms)[0m  commit transaction
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1[0m  [["fan_id", 2], ["star_id", 5]]
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 2], ["fan_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 2], ["fan_id", 5]]
+  Rendered follows/_follow_buttons.html.erb (1.7ms)
+  Rendered follows/new.js.erb (3.4ms)
+Completed 200 OK in 25ms (Views: 8.6ms | ActiveRecord: 12.3ms)
+
+
+Started GET "/users/2/follows" for ::1 at 2015-05-31 14:46:38 -0500
+Processing by FollowsController#index as HTML
+  Parameters: {"authenticity_token"=>"tWwz8qFFM2U6+fnTR+lyv42t6144ue03xoJubXGdCTW6Tb/+QvqeszN6u3Q+ko6yfb8EE+siqc3cbpxbll5Hcg==", "user_id"=>"2"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."star_id" WHERE "follows"."fan_id" = ?[0m  [["fan_id", 2]]
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."fan_id" WHERE "follows"."star_id" = ?  [["star_id", 2]]
+  Rendered follows/index.html.erb within layouts/application (5.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 36ms (Views: 34.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&keyword=h" for ::1 at 2015-05-31 14:47:27 -0500
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"h"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%h%')
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1[0m  [["fan_id", 1], ["star_id", 5]]
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 5]]
+  [1m[35mConnection Load (0.1ms)[0m  SELECT  "connections".* FROM "connections" WHERE "connections"."user_one_id" = ? AND "connections"."user_two_id" = ? LIMIT 1  [["user_one_id", 1], ["user_two_id", 5]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1[0m  [["fan_id", 2], ["star_id", 5]]
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 2], ["fan_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 2], ["fan_id", 5]]
+  [1m[35mConnection Load (0.1ms)[0m  SELECT  "connections".* FROM "connections" WHERE "connections"."user_one_id" = ? AND "connections"."user_two_id" = ? LIMIT 1  [["user_one_id", 2], ["user_two_id", 5]]
+  Rendered users/index.html.erb within layouts/application (4.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 35ms (Views: 33.9ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/users/1/follows/139" for ::1 at 2015-05-31 14:47:31 -0500
+Processing by FollowsController#destroy as JS
+  Parameters: {"user_id"=>"1", "id"=>"139"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mFollow Load (0.5ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."id" = ? LIMIT 1[0m  [["id", 139]]
+  [1m[35mSQL (9.1ms)[0m  DELETE FROM "follows" WHERE "follows"."id" = ?  [["id", 139]]
+  [1m[36mFollow Load (0.2ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1[0m  [["fan_id", 1], ["star_id", 5]]
+  [1m[35mFollow Load (0.3ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 5]]
+  Rendered follows/_follow_buttons.html.erb (1.9ms)
+  Rendered follows/destroy.js.erb (3.8ms)
+Completed 200 OK in 24ms (Views: 8.7ms | ActiveRecord: 10.4ms)
+
+
+Started POST "/users/1/follows" for ::1 at 2015-05-31 14:47:31 -0500
+Processing by FollowsController#create as JS
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "follows" ("star_id", "fan_id") VALUES (?, ?)[0m  [["star_id", 1], ["fan_id", 5]]
+  [1m[35m (8.9ms)[0m  commit transaction
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1[0m  [["fan_id", 1], ["star_id", 5]]
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 5]]
+  Rendered follows/_follow_buttons.html.erb (1.6ms)
+  Rendered follows/new.js.erb (3.6ms)
+Completed 200 OK in 22ms (Views: 9.4ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&keyword=h" for ::1 at 2015-05-31 14:49:39 -0500
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"h"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%h%')
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1[0m  [["fan_id", 1], ["star_id", 5]]
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 5]]
+  [1m[35mConnection Load (0.1ms)[0m  SELECT  "connections".* FROM "connections" WHERE "connections"."user_one_id" = ? AND "connections"."user_two_id" = ? LIMIT 1  [["user_one_id", 1], ["user_two_id", 5]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1[0m  [["fan_id", 2], ["star_id", 5]]
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 2], ["fan_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 2], ["fan_id", 5]]
+  [1m[35mConnection Load (0.1ms)[0m  SELECT  "connections".* FROM "connections" WHERE "connections"."user_one_id" = ? AND "connections"."user_two_id" = ? LIMIT 1  [["user_one_id", 2], ["user_two_id", 5]]
+  Rendered users/index.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 36ms (Views: 34.7ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/users/1/follows/141" for ::1 at 2015-05-31 14:49:41 -0500
+Processing by FollowsController#destroy as JS
+  Parameters: {"user_id"=>"1", "id"=>"141"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mFollow Load (0.3ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."id" = ? LIMIT 1[0m  [["id", 141]]
+  [1m[35mSQL (8.3ms)[0m  DELETE FROM "follows" WHERE "follows"."id" = ?  [["id", 141]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1[0m  [["fan_id", 1], ["star_id", 5]]
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 5]]
+  [1m[36mConnection Load (0.1ms)[0m  [1mSELECT  "connections".* FROM "connections" WHERE "connections"."user_one_id" = ? AND "connections"."user_two_id" = ? LIMIT 1[0m  [["user_one_id", 1], ["user_two_id", 5]]
+  Rendered follows/_follow_buttons.html.erb (2.0ms)
+  Rendered follows/destroy.js.erb (3.5ms)
+Completed 200 OK in 21ms (Views: 7.4ms | ActiveRecord: 9.1ms)
+
+
+Started POST "/users/1/follows" for ::1 at 2015-05-31 14:49:42 -0500
+Processing by FollowsController#create as JS
+  Parameters: {"user_id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "follows" ("star_id", "fan_id") VALUES (?, ?)  [["star_id", 1], ["fan_id", 5]]
+  [1m[36m (9.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1  [["fan_id", 1], ["star_id", 5]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 5]]
+  [1m[36mConnection Load (0.1ms)[0m  [1mSELECT  "connections".* FROM "connections" WHERE "connections"."user_one_id" = ? AND "connections"."user_two_id" = ? LIMIT 1[0m  [["user_one_id", 1], ["user_two_id", 5]]
+  Rendered follows/_follow_buttons.html.erb (1.4ms)
+  Rendered follows/new.js.erb (2.6ms)
+Completed 200 OK in 19ms (Views: 7.6ms | ActiveRecord: 9.6ms)
+
+
+Started DELETE "/users/1/follows/142" for ::1 at 2015-05-31 14:49:42 -0500
+Processing by FollowsController#destroy as JS
+  Parameters: {"user_id"=>"1", "id"=>"142"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."id" = ? LIMIT 1[0m  [["id", 142]]
+  [1m[35mSQL (9.0ms)[0m  DELETE FROM "follows" WHERE "follows"."id" = ?  [["id", 142]]
+  [1m[36mFollow Load (0.2ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1[0m  [["fan_id", 1], ["star_id", 5]]
+  [1m[35mFollow Load (0.2ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 5]]
+  [1m[36mConnection Load (0.2ms)[0m  [1mSELECT  "connections".* FROM "connections" WHERE "connections"."user_one_id" = ? AND "connections"."user_two_id" = ? LIMIT 1[0m  [["user_one_id", 1], ["user_two_id", 5]]
+  Rendered follows/_follow_buttons.html.erb (3.2ms)
+  Rendered follows/destroy.js.erb (5.0ms)
+Completed 200 OK in 20ms (Views: 8.8ms | ActiveRecord: 9.8ms)
+
+
+Started POST "/users/1/follows" for ::1 at 2015-05-31 14:49:43 -0500
+Processing by FollowsController#create as JS
+  Parameters: {"user_id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "follows" ("star_id", "fan_id") VALUES (?, ?)  [["star_id", 1], ["fan_id", 5]]
+  [1m[36m (8.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mFollow Load (0.3ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1  [["fan_id", 1], ["star_id", 5]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 5]]
+  [1m[36mConnection Load (0.1ms)[0m  [1mSELECT  "connections".* FROM "connections" WHERE "connections"."user_one_id" = ? AND "connections"."user_two_id" = ? LIMIT 1[0m  [["user_one_id", 1], ["user_two_id", 5]]
+  Rendered follows/_follow_buttons.html.erb (2.3ms)
+  Rendered follows/new.js.erb (4.3ms)
+Completed 200 OK in 21ms (Views: 9.3ms | ActiveRecord: 9.8ms)
+
+
+Started DELETE "/users/2/follows/140" for ::1 at 2015-05-31 14:49:44 -0500
+Processing by FollowsController#destroy as JS
+  Parameters: {"user_id"=>"2", "id"=>"140"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."id" = ? LIMIT 1[0m  [["id", 140]]
+  [1m[35mSQL (9.0ms)[0m  DELETE FROM "follows" WHERE "follows"."id" = ?  [["id", 140]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1[0m  [["fan_id", 2], ["star_id", 5]]
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 2], ["fan_id", 5]]
+  [1m[36mConnection Load (0.1ms)[0m  [1mSELECT  "connections".* FROM "connections" WHERE "connections"."user_one_id" = ? AND "connections"."user_two_id" = ? LIMIT 1[0m  [["user_one_id", 2], ["user_two_id", 5]]
+  Rendered follows/_follow_buttons.html.erb (1.2ms)
+  Rendered follows/destroy.js.erb (2.7ms)
+Completed 200 OK in 18ms (Views: 7.0ms | ActiveRecord: 9.4ms)
+
+
+Started POST "/users/2/follows" for ::1 at 2015-05-31 14:49:44 -0500
+Processing by FollowsController#create as JS
+  Parameters: {"user_id"=>"2"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "follows" ("star_id", "fan_id") VALUES (?, ?)  [["star_id", 2], ["fan_id", 5]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mFollow Load (0.3ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1  [["fan_id", 2], ["star_id", 5]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 2], ["fan_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 2], ["fan_id", 5]]
+  [1m[36mConnection Load (0.1ms)[0m  [1mSELECT  "connections".* FROM "connections" WHERE "connections"."user_one_id" = ? AND "connections"."user_two_id" = ? LIMIT 1[0m  [["user_one_id", 2], ["user_two_id", 5]]
+  Rendered follows/_follow_buttons.html.erb (2.3ms)
+  Rendered follows/new.js.erb (4.5ms)
+Completed 200 OK in 11ms (Views: 7.8ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/users/2/follows/144" for ::1 at 2015-05-31 14:49:45 -0500
+Processing by FollowsController#destroy as JS
+  Parameters: {"user_id"=>"2", "id"=>"144"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."id" = ? LIMIT 1[0m  [["id", 144]]
+  [1m[35mSQL (9.3ms)[0m  DELETE FROM "follows" WHERE "follows"."id" = ?  [["id", 144]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1[0m  [["fan_id", 2], ["star_id", 5]]
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 2], ["fan_id", 5]]
+  [1m[36mConnection Load (0.1ms)[0m  [1mSELECT  "connections".* FROM "connections" WHERE "connections"."user_one_id" = ? AND "connections"."user_two_id" = ? LIMIT 1[0m  [["user_one_id", 2], ["user_two_id", 5]]
+  Rendered follows/_follow_buttons.html.erb (1.4ms)
+  Rendered follows/destroy.js.erb (2.8ms)
+Completed 200 OK in 18ms (Views: 6.3ms | ActiveRecord: 9.7ms)
+
+
+Started POST "/users/2/follows" for ::1 at 2015-05-31 14:49:45 -0500
+Processing by FollowsController#create as JS
+  Parameters: {"user_id"=>"2"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "follows" ("star_id", "fan_id") VALUES (?, ?)  [["star_id", 2], ["fan_id", 5]]
+  [1m[36m (9.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mFollow Load (0.3ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1  [["fan_id", 2], ["star_id", 5]]
+  [1m[36mFollow Load (0.2ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 2], ["fan_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 2], ["fan_id", 5]]
+  [1m[36mConnection Load (0.1ms)[0m  [1mSELECT  "connections".* FROM "connections" WHERE "connections"."user_one_id" = ? AND "connections"."user_two_id" = ? LIMIT 1[0m  [["user_one_id", 2], ["user_two_id", 5]]
+  Rendered follows/_follow_buttons.html.erb (3.0ms)
+  Rendered follows/new.js.erb (4.9ms)
+Completed 200 OK in 22ms (Views: 9.4ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/connections/4/messages" for ::1 at 2015-05-31 14:49:46 -0500
+Processing by MessagesController#index as HTML
+  Parameters: {"authenticity_token"=>"0p3oFWrdN7w304jlKmHYTzKmHVZHTUC+hj28m22nByXdvGQZiWKaaj5QykJTGiRCwrTyG5TWBESc0U6timRJYg==", "connection_id"=>"4"}
+  [1m[35mConnection Load (0.1ms)[0m  SELECT  "connections".* FROM "connections" WHERE "connections"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mMessage Load (0.6ms)[0m  SELECT  "messages".* FROM "messages" WHERE "messages"."connection_id" = ?  ORDER BY date LIMIT 100  [["connection_id", 4]]
+  Rendered messages/index.html.erb within layouts/application (3.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 33ms (Views: 30.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/connections/5/messages" for ::1 at 2015-05-31 14:49:52 -0500
+Processing by MessagesController#index as HTML
+  Parameters: {"authenticity_token"=>"0p3oFWrdN7w304jlKmHYTzKmHVZHTUC+hj28m22nByXdvGQZiWKaaj5QykJTGiRCwrTyG5TWBESc0U6timRJYg==", "connection_id"=>"5"}
+  [1m[35mConnection Load (0.1ms)[0m  SELECT  "connections".* FROM "connections" WHERE "connections"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mMessage Load (0.9ms)[0m  SELECT  "messages".* FROM "messages" WHERE "messages"."connection_id" = ?  ORDER BY date LIMIT 100  [["connection_id", 5]]
+  Rendered messages/index.html.erb within layouts/application (3.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 42ms (Views: 39.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/connections" for ::1 at 2015-05-31 14:49:55 -0500
+Processing by ConnectionsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mConnection Load (0.2ms)[0m  [1mSELECT "connections".* FROM "connections" WHERE (user_one_id = 5 OR user_two_id = 5)[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered connections/index.html.erb within layouts/application (2.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+Completed 200 OK in 34ms (Views: 33.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/connections/4/messages" for ::1 at 2015-05-31 14:49:57 -0500
+Processing by MessagesController#index as HTML
+  Parameters: {"connection_id"=>"4"}
+  [1m[36mConnection Load (0.1ms)[0m  [1mSELECT  "connections".* FROM "connections" WHERE "connections"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT  "messages".* FROM "messages" WHERE "messages"."connection_id" = ?  ORDER BY date LIMIT 100[0m  [["connection_id", 4]]
+  Rendered messages/index.html.erb within layouts/application (1.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+Completed 200 OK in 35ms (Views: 33.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/connections/4/messages" for ::1 at 2015-05-31 14:50:06 -0500
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IcJe/imge+x8k4EWzDsaUCa+2ax2YVzePsgR1gLCt98u49Lyyh/WOnUQw7G1QOZd1qw24aX6GCQkJOPg5QH5mA==", "message"=>"hello", "connection_id"=>"4"}
+  [1m[36mConnection Load (0.1ms)[0m  [1mSELECT  "connections".* FROM "connections" WHERE "connections"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "messages" ("content", "connection_id", "sender_id", "receiver_id", "date") VALUES (?, ?, ?, ?, ?)[0m  [["content", "hello"], ["connection_id", 4], ["sender_id", 5], ["receiver_id", 1], ["date", 1433101806]]
+  [1m[35m (4.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/connections/4/messages
+Completed 302 Found in 8ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/connections/4/messages" for ::1 at 2015-05-31 14:50:06 -0500
+Processing by MessagesController#index as HTML
+  Parameters: {"connection_id"=>"4"}
+  [1m[36mConnection Load (0.1ms)[0m  [1mSELECT  "connections".* FROM "connections" WHERE "connections"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT  "messages".* FROM "messages" WHERE "messages"."connection_id" = ?  ORDER BY date LIMIT 100[0m  [["connection_id", 4]]
+  Rendered messages/index.html.erb within layouts/application (1.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+Completed 200 OK in 52ms (Views: 49.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/connections/4/messages" for ::1 at 2015-05-31 14:51:16 -0500
+Processing by MessagesController#index as HTML
+  Parameters: {"connection_id"=>"4"}
+  [1m[36mConnection Load (0.1ms)[0m  [1mSELECT  "connections".* FROM "connections" WHERE "connections"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT  "messages".* FROM "messages" WHERE "messages"."connection_id" = ?  ORDER BY date LIMIT 100[0m  [["connection_id", 4]]
+  Rendered messages/index.html.erb within layouts/application (7.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+Completed 200 OK in 53ms (Views: 30.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/logout" for ::1 at 2015-05-31 14:51:20 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-05-31 14:51:20 -0500
+Processing by TweetsController#index as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :find_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-05-31 14:51:20 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 28ms (Views: 27.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2015-05-31 14:51:22 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 31ms (Views: 29.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2015-05-31 14:51:31 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WUiFc+LFxZWq3yBzIUKhVlgNs3kCcEeT0zTpKCLd6hNWaQl/AXpoQ6NcYtRYOV1bqB9cNNHrA2nJ2BsexR6kVA==", "username"=>"kl", "email"=>"kl@uchicago.edu", "password"=>"[FILTERED]", "button"=>""}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'kl@uchicago.edu' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'kl' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "image") VALUES (?, ?, ?, ?)  [["username", "kl"], ["email", "kl@uchicago.edu"], ["password_digest", "$2a$10$XQyCF/xJFrgc1Nlanb29TeuY2.DE4kejlMFzl/z9LRW.HUV3EZQ0C"], ["image", "http://tp1.sinaimg.cn/1631772764/50/40008304461/0"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 90ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2015-05-31 14:51:31 -0500
+Processing by TweetsController#index as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :find_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-05-31 14:51:31 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 76ms (Views: 74.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-05-31 14:51:33 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 38ms (Views: 36.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2015-05-31 14:51:37 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SG1p3OpIZyP9tK2xAhQtWpgMvBIOz9mYAhT08h+yrLRHTOXQCffK9fQ37xZ7b9FXaB5TX91UnWIY+AbE+HHi8w==", "email"=>"kl@uchicago.edu", "password"=>"[FILTERED]", "button"=>""}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "kl@uchicago.edu"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 75ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-05-31 14:51:37 -0500
+Processing by TweetsController#index as HTML
+  [1m[36mTweet Load (0.8ms)[0m  [1mSELECT  "tweets".* FROM "tweets"  ORDER BY date desc LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "tweets"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mComment Load (0.7ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 10]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 2]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "follows" WHERE "follows"."fan_id" = ?  [["fan_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "follows" WHERE "follows"."fan_id" = ?[0m  [["fan_id", 6]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "tweets" WHERE "tweets"."user_id" = ?  [["user_id", 6]]
+  Rendered tweets/index.html.erb within layouts/application (54.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+Completed 200 OK in 105ms (Views: 92.4ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&keyword=h" for ::1 at 2015-05-31 14:51:44 -0500
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"h"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE (username LIKE '%h%')
+  [1m[36mFollow Load (0.7ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1[0m  [["fan_id", 1], ["star_id", 6]]
+  [1m[35mFollow Load (0.4ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 6]]
+  [1m[36mConnection Load (0.5ms)[0m  [1mSELECT  "connections".* FROM "connections" WHERE "connections"."user_one_id" = ? AND "connections"."user_two_id" = ? LIMIT 1[0m  [["user_one_id", 1], ["user_two_id", 6]]
+  [1m[35mConnection Load (0.1ms)[0m  SELECT  "connections".* FROM "connections" WHERE "connections"."user_one_id" = ? AND "connections"."user_two_id" = ? LIMIT 1  [["user_one_id", 6], ["user_two_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "connections" ("user_one_id", "user_two_id", "date") VALUES (?, ?, ?)  [["user_one_id", 1], ["user_two_id", 6], ["date", 1433101904]]
+  [1m[36m (8.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1  [["fan_id", 2], ["star_id", 6]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 2], ["fan_id", 6]]
+  [1m[35mConnection Load (0.1ms)[0m  SELECT  "connections".* FROM "connections" WHERE "connections"."user_one_id" = ? AND "connections"."user_two_id" = ? LIMIT 1  [["user_one_id", 2], ["user_two_id", 6]]
+  [1m[36mConnection Load (0.1ms)[0m  [1mSELECT  "connections".* FROM "connections" WHERE "connections"."user_one_id" = ? AND "connections"."user_two_id" = ? LIMIT 1[0m  [["user_one_id", 6], ["user_two_id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "connections" ("user_one_id", "user_two_id", "date") VALUES (?, ?, ?)[0m  [["user_one_id", 2], ["user_two_id", 6], ["date", 1433101904]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  Rendered users/index.html.erb within layouts/application (28.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+Completed 200 OK in 69ms (Views: 55.0ms | ActiveRecord: 12.9ms)
+
+
+Started POST "/users/1/follows" for ::1 at 2015-05-31 14:51:46 -0500
+Processing by FollowsController#create as JS
+  Parameters: {"user_id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "follows" ("star_id", "fan_id") VALUES (?, ?)  [["star_id", 1], ["fan_id", 6]]
+  [1m[36m (8.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1  [["fan_id", 1], ["star_id", 6]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 6]]
+  [1m[36mConnection Load (0.1ms)[0m  [1mSELECT  "connections".* FROM "connections" WHERE "connections"."user_one_id" = ? AND "connections"."user_two_id" = ? LIMIT 1[0m  [["user_one_id", 1], ["user_two_id", 6]]
+  Rendered follows/_follow_buttons.html.erb (1.9ms)
+  Rendered follows/new.js.erb (3.4ms)
+Completed 200 OK in 20ms (Views: 7.2ms | ActiveRecord: 9.4ms)
+
+
+Started POST "/users/2/follows" for ::1 at 2015-05-31 14:51:46 -0500
+Processing by FollowsController#create as JS
+  Parameters: {"user_id"=>"2"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "follows" ("star_id", "fan_id") VALUES (?, ?)  [["star_id", 2], ["fan_id", 6]]
+  [1m[36m (8.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mFollow Load (0.2ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1  [["fan_id", 2], ["star_id", 6]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 2], ["fan_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 2], ["fan_id", 6]]
+  [1m[36mConnection Load (0.1ms)[0m  [1mSELECT  "connections".* FROM "connections" WHERE "connections"."user_one_id" = ? AND "connections"."user_two_id" = ? LIMIT 1[0m  [["user_one_id", 2], ["user_two_id", 6]]
+  Rendered follows/_follow_buttons.html.erb (2.3ms)
+  Rendered follows/new.js.erb (4.1ms)
+Completed 200 OK in 21ms (Views: 8.8ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/" for ::1 at 2015-05-31 14:51:48 -0500
+Processing by TweetsController#index as HTML
+  [1m[35mTweet Load (0.7ms)[0m  SELECT  "tweets".* FROM "tweets"  ORDER BY date desc LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "tweets"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 10]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "follows" WHERE "follows"."fan_id" = ?[0m  [["fan_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "follows" WHERE "follows"."fan_id" = ?  [["fan_id", 6]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered tweets/index.html.erb within layouts/application (20.6ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+Completed 200 OK in 46ms (Views: 42.9ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/tweets" for ::1 at 2015-05-31 14:51:56 -0500
+Processing by TweetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kXknVKiDs9fqge8fWvb7vdvZ5+yFCczhMxLOekyHBGWeWKtYSzweAeMCrbgjjQewK8sIoVaSiBsp/jxMq0RKIg==", "post_tweet"=>"hello"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tweets" ("content", "date", "user_id") VALUES (?, ?, ?)  [["content", "hello"], ["date", 1433101916], ["user_id", 6]]
+  [1m[36m (8.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 12ms (ActiveRecord: 8.7ms)
+
+
+Started GET "/" for ::1 at 2015-05-31 14:51:56 -0500
+Processing by TweetsController#index as HTML
+  [1m[35mTweet Load (0.5ms)[0m  SELECT  "tweets".* FROM "tweets"  ORDER BY date desc LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tweets"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 11]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 10]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc[0m  [["tweet_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."tweet_id" = ?  ORDER BY date desc  [["tweet_id", 7]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "follows" WHERE "follows"."fan_id" = ?[0m  [["fan_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "follows" WHERE "follows"."fan_id" = ?  [["fan_id", 6]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tweets" WHERE "tweets"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered tweets/index.html.erb within layouts/application (12.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+Completed 200 OK in 53ms (Views: 50.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users?utf8=%E2%9C%93&keyword=h" for ::1 at 2015-05-31 14:52:04 -0500
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "keyword"=>"h"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username LIKE '%h%')[0m
+  [1m[35mFollow Load (0.1ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1  [["fan_id", 1], ["star_id", 6]]
+  [1m[36mFollow Load (0.1ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 1], ["fan_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 1], ["fan_id", 6]]
+  [1m[36mConnection Load (0.3ms)[0m  [1mSELECT  "connections".* FROM "connections" WHERE "connections"."user_one_id" = ? AND "connections"."user_two_id" = ? LIMIT 1[0m  [["user_one_id", 1], ["user_two_id", 6]]
+  [1m[35mFollow Load (0.3ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."fan_id" = ? AND "follows"."star_id" = ? LIMIT 1  [["fan_id", 2], ["star_id", 6]]
+  [1m[36mFollow Load (0.3ms)[0m  [1mSELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1[0m  [["star_id", 2], ["fan_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "follows".* FROM "follows" WHERE "follows"."star_id" = ? AND "follows"."fan_id" = ? LIMIT 1  [["star_id", 2], ["fan_id", 6]]
+  [1m[36mConnection Load (0.1ms)[0m  [1mSELECT  "connections".* FROM "connections" WHERE "connections"."user_one_id" = ? AND "connections"."user_two_id" = ? LIMIT 1[0m  [["user_one_id", 2], ["user_two_id", 6]]
+  Rendered users/index.html.erb within layouts/application (8.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+Completed 200 OK in 47ms (Views: 45.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/connections/6/messages" for ::1 at 2015-05-31 14:52:06 -0500
+Processing by MessagesController#index as HTML
+  Parameters: {"authenticity_token"=>"ISGUu3xnterC7tHWRur9FtONh9okXKml6UoWYxidwSouABi3n9gYPMttk3E/kQEbI59ol/fH7V/zpuRV/16PbQ==", "connection_id"=>"6"}
+  [1m[36mConnection Load (0.1ms)[0m  [1mSELECT  "connections".* FROM "connections" WHERE "connections"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT  "messages".* FROM "messages" WHERE "messages"."connection_id" = ?  ORDER BY date LIMIT 100[0m  [["connection_id", 6]]
+  Rendered messages/index.html.erb within layouts/application (2.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+Completed 200 OK in 38ms (Views: 36.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/connections/6/messages" for ::1 at 2015-05-31 14:52:15 -0500
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MjHvG9whJe0LWTbIdnk3Ph69nXeD7ghCdhMNjzRBub49EGMXP56IOwLadG8PAssz7q9yOlB1TLhs//+504L3+Q==", "message"=>"hello", "connection_id"=>"6"}
+  [1m[36mConnection Load (0.1ms)[0m  [1mSELECT  "connections".* FROM "connections" WHERE "connections"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "messages" ("content", "connection_id", "sender_id", "receiver_id", "date") VALUES (?, ?, ?, ?, ?)[0m  [["content", "hello"], ["connection_id", 6], ["sender_id", 6], ["receiver_id", 1], ["date", 1433101935]]
+  [1m[35m (6.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/connections/6/messages
+Completed 302 Found in 11ms (ActiveRecord: 6.8ms)
+
+
+Started GET "/connections/6/messages" for ::1 at 2015-05-31 14:52:15 -0500
+Processing by MessagesController#index as HTML
+  Parameters: {"connection_id"=>"6"}
+  [1m[36mConnection Load (0.2ms)[0m  [1mSELECT  "connections".* FROM "connections" WHERE "connections"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT  "messages".* FROM "messages" WHERE "messages"."connection_id" = ?  ORDER BY date LIMIT 100[0m  [["connection_id", 6]]
+  Rendered messages/index.html.erb within layouts/application (1.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+Completed 200 OK in 27ms (Views: 23.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/connections/7/messages" for ::1 at 2015-05-31 14:52:19 -0500
+Processing by MessagesController#index as HTML
+  Parameters: {"authenticity_token"=>"ISGUu3xnterC7tHWRur9FtONh9okXKml6UoWYxidwSouABi3n9gYPMttk3E/kQEbI59ol/fH7V/zpuRV/16PbQ==", "connection_id"=>"7"}
+  [1m[36mConnection Load (0.1ms)[0m  [1mSELECT  "connections".* FROM "connections" WHERE "connections"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT  "messages".* FROM "messages" WHERE "messages"."connection_id" = ?  ORDER BY date LIMIT 100[0m  [["connection_id", 7]]
+  Rendered messages/index.html.erb within layouts/application (1.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+Completed 200 OK in 35ms (Views: 33.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/connections/7/messages" for ::1 at 2015-05-31 14:52:23 -0500
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TYidfysDteFCbhaoELWWtWceSD49cCRBWhB5TbhohS9CqRFzyLwYN0vtVA9pzmq4lwync+7rYLtA/It7X6vLaA==", "message"=>"h", "connection_id"=>"7"}
+  [1m[36mConnection Load (0.1ms)[0m  [1mSELECT  "connections".* FROM "connections" WHERE "connections"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "messages" ("content", "connection_id", "sender_id", "receiver_id", "date") VALUES (?, ?, ?, ?, ?)[0m  [["content", "h"], ["connection_id", 7], ["sender_id", 6], ["receiver_id", 2], ["date", 1433101943]]
+  [1m[35m (6.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/connections/7/messages
+Completed 302 Found in 12ms (ActiveRecord: 7.3ms)
+
+
+Started GET "/connections/7/messages" for ::1 at 2015-05-31 14:52:23 -0500
+Processing by MessagesController#index as HTML
+  Parameters: {"connection_id"=>"7"}
+  [1m[36mConnection Load (0.1ms)[0m  [1mSELECT  "connections".* FROM "connections" WHERE "connections"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT  "messages".* FROM "messages" WHERE "messages"."connection_id" = ?  ORDER BY date LIMIT 100[0m  [["connection_id", 7]]
+  Rendered messages/index.html.erb within layouts/application (1.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+Completed 200 OK in 35ms (Views: 33.6ms | ActiveRecord: 0.3ms)

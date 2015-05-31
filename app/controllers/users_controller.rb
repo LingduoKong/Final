@@ -23,6 +23,7 @@ class UsersController < ApplicationController
 
 	def create
 		@user = User.new(username: params[:username], email: params[:email], password: params[:password])
+		@user.image = "http://tp1.sinaimg.cn/1631772764/50/40008304461/0";
 		if @user.save
 			redirect_to root_url, notice: "Thanks for signing up."
 		else

@@ -5,10 +5,14 @@
 
 <% elsif Follow.find_by_star_id_and_fan_id(@user.id, session["user_id"]).present? %>
 <% follow = Follow.find_by_star_id_and_fan_id(@user.id, session["user_id"]) %>
-<%= link_to user_follow_path(@user.id, follow.id), method: "delete", class: "btn btn-danger", remote: true %>
+<%= link_to "Unfollow", user_follow_path(@user.id, follow.id), method: "delete", class: "btn btn-danger", remote: true %>
 
 <% else %>
 <%= link_to "Follow" , user_follows_path(@user.id), method: "post", class: "btn btn-success", remote: true %>
 <% end %>
 
-<%= link_to "Connect" , user_follows_path(@user.id),method: "get", class: "btn btn-default" %>
+<% connection =  Connection.find_by_user_one_id_and_user_two_id(@user.id,session["user_id"]) || Connection.find_by_user_one_id_and_user_two_id(session["user_id"], @user.id) %>
+<% if ! connection.present? %>
+<% connection = Connection.create(user_one_id: @user.id, user_two_id: session["user_id"], date: DateTime.now.to_i) %>
+<% end %>
+<%= link_to "Connect" , connection_messages_path(connection.id) ,method: "get", class: "btn btn-default" %>
