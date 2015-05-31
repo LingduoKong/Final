@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   	resources :follows
   end
 
+  resources :follows
+
   resources :connections do
     resources :messages
   end
