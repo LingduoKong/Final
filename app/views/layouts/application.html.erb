@@ -12,7 +12,7 @@
   <div class="container">
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
-      <div class="col-xs-2">
+        <div class="col-xs-2">
           <div class="navbar-header">
             <a class="navbar-brand" href="/">
               <big>Tweet</big>
@@ -26,7 +26,16 @@
             <li><a href="">About</a></li>
             <li><a href="">Contact us</a></li>
           </ul>
+          <%= form_tag users_path, method:"get", class: "navbar-form" do %>
+          <div class="input-group pull-right">
+            <input type="text" class="form-control" placeholder="People" name="keyword">
+            <div class="input-group-btn">
+              <button class="btn btn-default" type="submit">Search</button>
+            </div>
+          </div>
+          <% end %>
         </div>
+
         <div class="col-xs-3">
           <ul class="nav navbar-nav">
             <% if session["user_id"].present? %>

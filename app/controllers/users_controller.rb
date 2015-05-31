@@ -9,6 +9,14 @@ class UsersController < ApplicationController
 		end
 	end
 
+	def index
+    if params["keyword"].present?
+      @users = User.where("username LIKE ?", "%#{params[:keyword]}%")
+    else
+      @users = User.all
+    end
+ 	end
+
 	def new
 		@user = User.new
 	end
