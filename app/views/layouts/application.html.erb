@@ -26,6 +26,7 @@
             <li><a href="">About</a></li>
             <li><a href="">Contact us</a></li>
           </ul>
+          <% if session["user_id"].present? %>
           <%= form_tag users_path, method:"get", class: "navbar-form" do %>
           <div class="input-group pull-right">
             <input type="text" class="form-control" placeholder="People" name="keyword">
@@ -33,6 +34,7 @@
               <button class="btn btn-default" type="submit">Search</button>
             </div>
           </div>
+          <% end %>
           <% end %>
         </div>
 
