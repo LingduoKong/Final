@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     if params["keyword"].present?
       @users = User.where("username LIKE ?", "%#{params[:keyword]}%")
     else
-      @users = User.all
+      @users = User.all.limit(100);
     end
  	end
 

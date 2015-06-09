@@ -18,9 +18,9 @@ class TweetsController < ApplicationController
 	
 	def index
 		if params["user_id"].present?
-			@tweets = Tweet.where(user_id: params["user_id"])
+			@tweets = Tweet.where(user_id: params["user_id"]).limit(100)
 		else
-			@tweets = Tweet.all
+			@tweets = Tweet.all.limit(100)
 		end
 		@tweets = @tweets.order('date desc').paginate(:per_page => 5, :page => params[:page])
 	end
